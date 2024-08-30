@@ -28,6 +28,7 @@ gsonVersion = "2.11.0"
 paletteVersion = "1.0.0"
 kotlinSerializationVersion = "1.7.2"
 percentagesWithAnimationComposeVersion = "1.1.0"
+appcompat = "1.7.0"
 
 [libraries]
 # My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
@@ -83,6 +84,7 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "composeVersion" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
