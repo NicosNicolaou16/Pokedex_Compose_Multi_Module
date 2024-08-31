@@ -33,7 +33,15 @@ class PokemonDetailsRepository @Inject constructor(
 
     suspend fun offline(name: String): Resource<PokemonDetailsEntity> {
         return try {
-            Resource.Success(data = myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name))
+            val pokemonDetailsEntity: PokemonDetailsEntity? =
+                myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name)
+            if (pokemonDetailsEntity != null) {
+                Resource.Success(
+                    data = myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name)
+                )
+            } else {
+                Resource.Error(message = handlingError.handleErrorMessage(Exception()))
+            }
         } catch (e: Exception) {
             Resource.Error(message = handlingError.handleErrorMessage(e))
         }
