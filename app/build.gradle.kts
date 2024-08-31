@@ -57,14 +57,13 @@ android {
 
 dependencies {
 
-// My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
+    // My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
     implementation(libs.percentages.with.animation.compose)
     //Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.swipe.refresh.layout)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     //Compose
-    //implementation(libs.androidx.compose.compiler)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)

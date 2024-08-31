@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.nicos.database"
+    namespace = "com.nicos.network"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.nicos.database"
+        applicationId = "com.nicos.network"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -36,21 +36,16 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-    composeCompiler {
-        enableStrongSkippingMode = true
-        reportsDestination = layout.buildDirectory.dir("compose_compiler")
-    }
 }
 
 dependencies {
 
+    //Modules
+    implementation(project(":app"))
+    implementation(project(":database"))
+    //Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    //Room Database
-    api(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.ktx)
     //Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
@@ -58,13 +53,9 @@ dependencies {
     implementation(libs.okHttp)
     //Gson
     implementation(libs.gson)
-    //Coil
-    implementation(libs.coil)
     //Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
-    //Kotlin Serialization
-    implementation(libs.kotlinx.serialization.json)
     //Material
     implementation(libs.material)
     //Hilt
