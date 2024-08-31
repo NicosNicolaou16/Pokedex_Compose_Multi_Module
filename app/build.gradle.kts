@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android)
+    //alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.parcelize)
     alias(libs.plugins.compose.compiler)
@@ -77,7 +77,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.animation)
     implementation(libs.androidx.foundation)
-    //Room Database
+   /* //Room Database
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
@@ -87,7 +87,7 @@ dependencies {
     //OkHttp
     implementation(libs.okHttp)
     //Gson
-    implementation(libs.gson)
+    implementation(libs.gson)*/
     //Coil
     implementation(libs.coil)
     //Coroutines
@@ -97,10 +97,10 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     //Material
     implementation(libs.material)
-    //Hilt
+    /*//Hilt
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
-    ksp(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)*/
     //Palette
     implementation(libs.androidx.palette.ktx)
     //Unit Test
