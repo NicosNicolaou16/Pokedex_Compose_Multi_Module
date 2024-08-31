@@ -3,8 +3,8 @@ package com.nicos.network.domain.repositories
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
 import com.nicos.network.domain.remote.PokemonService
-import com.nicos.pokedex_compose_multi_module.utils.generic_classes.HandlingError
-import com.nicos.pokedex_compose_multi_module.utils.generic_classes.Resource
+import com.nicos.network.generic_classes.HandlingError
+import com.nicos.network.generic_classes.Resource
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
