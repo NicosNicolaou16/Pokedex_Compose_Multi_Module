@@ -1,9 +1,8 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
-    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -11,11 +10,8 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.nicos.database"
         minSdk = 27
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,10 +32,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-    composeCompiler {
-        enableStrongSkippingMode = true
-        reportsDestination = layout.buildDirectory.dir("compose_compiler")
-    }
 }
 
 dependencies {
@@ -51,20 +43,11 @@ dependencies {
     api(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
-    //OkHttp
-    implementation(libs.okHttp)
     //Gson
     implementation(libs.gson)
-    //Coil
-    implementation(libs.coil)
     //Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
-    //Kotlin Serialization
-    implementation(libs.kotlinx.serialization.json)
     //Material
     implementation(libs.material)
     //Hilt

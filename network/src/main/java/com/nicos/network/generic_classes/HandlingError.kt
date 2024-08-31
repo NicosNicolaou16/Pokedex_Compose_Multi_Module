@@ -1,7 +1,7 @@
 package com.nicos.network.generic_classes
 
 import android.content.Context
-import com.nicos.pokedex_compose_multi_module.R
+import com.nicos.network.R
 import okhttp3.ResponseBody
 import org.json.JSONArray
 import org.json.JSONObject

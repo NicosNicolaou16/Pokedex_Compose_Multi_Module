@@ -1,9 +1,8 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
-    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -11,11 +10,8 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.nicos.network"
         minSdk = 27
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +37,6 @@ android {
 dependencies {
 
     //Modules
-    implementation(project(":app"))
     implementation(project(":database"))
     //Architecture
     implementation(libs.androidx.core.ktx)

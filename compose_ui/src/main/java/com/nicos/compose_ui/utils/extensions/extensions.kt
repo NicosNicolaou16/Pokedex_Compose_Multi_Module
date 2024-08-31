@@ -1,4 +1,4 @@
-package com.nicos.pokedex_compose_multi_module.utils.extensions
+package com.nicos.compose_ui.utils.extensions
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable
 import androidx.core.graphics.drawable.toBitmap
 import androidx.palette.graphics.Palette
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
-import com.nicos.pokedex_compose_multi_module.R
+import com.nicos.compose_ui.R
 import java.net.URLDecoder
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets

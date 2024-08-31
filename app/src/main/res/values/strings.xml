@@ -1,12 +1,4 @@
 <resources>
     <string name="app_name">Pokedex_Compose_Multi_Module</string>
-    <string name="something_went_wrong_with_server">something_went_wrong with server</string>
-    <string name="check_your_internet_connection">check your internet connection</string>
-    <string name="something_went_wrong">something went wrong</string>
-    <string name="list_of_ships">List of Ships</string>
-    <string name="error">Error</string>
-    <string name="ok">OK</string>
-    <string name="kg">Kg</string>
-    <string name="pokemon_details">Pokemon Details</string>
-    <string name="pokemon_list">Pokemon List</string>
+    <string name="title_test">test</string>
 </resources>

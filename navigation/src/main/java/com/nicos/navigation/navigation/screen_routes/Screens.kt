@@ -1,4 +1,4 @@
-package com.nicos.pokedex_compose_multi_module.utils.screen_routes
+package com.nicos.navigation.navigation.screen_routes
 
 import kotlinx.serialization.Serializable
 
