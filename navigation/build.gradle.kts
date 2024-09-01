@@ -53,8 +53,11 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    //Compose
     api(libs.androidx.navigate.compose)
+    //Serialization
     implementation(libs.kotlinx.serialization.json)
+    //Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
