@@ -49,6 +49,7 @@ dependencies {
     //Modules
     implementation(project(":compose_ui"))
     implementation(project(":database"))
+    //Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
