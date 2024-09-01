@@ -46,7 +46,7 @@ android {
 
 dependencies {
 
-    //Module
+    //Modules
     implementation(project(":database"))
     implementation(project(":network"))
     // My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
