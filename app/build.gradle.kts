@@ -8,6 +8,7 @@ plugins {
 
 android {
     namespace = "com.nicos.pokedex_compose_multi_module"
+    buildToolsVersion = "34.0.0"
     compileSdk = 34
 
     defaultConfig {

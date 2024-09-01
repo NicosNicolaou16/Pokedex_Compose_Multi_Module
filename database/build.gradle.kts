@@ -7,6 +7,7 @@ plugins {
 
 android {
     namespace = "com.nicos.database"
+    buildToolsVersion = "34.0.0"
     compileSdk = 34
 
     defaultConfig {

@@ -8,6 +8,7 @@ plugins {
 
 android {
     namespace = "com.nicos.compose_ui"
+    buildToolsVersion = "34.0.0"
     compileSdk = 34
 
     defaultConfig {
