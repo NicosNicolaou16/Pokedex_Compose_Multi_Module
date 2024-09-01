@@ -29,6 +29,9 @@ R8 enabled <br />
   <a title="simulator_image"><img src="examples/example_gif1.gif" height="500" width="200"></a>
 </p>
 
+# How to create the Module from Android Studio
+File -> New -> New Module -> Android Library -> Add your own Module Name -> Finish.
+
 # Versioning
 Target SDK version: 34 <br />
 Minimum SDK version: 27 <br />
