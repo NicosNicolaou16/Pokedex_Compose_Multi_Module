@@ -51,6 +51,7 @@ dependencies {
     implementation(project(":network"))
     // My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
     implementation(libs.percentages.with.animation.compose)
+    //Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.swipe.refresh.layout)
@@ -69,6 +70,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.animation)
     implementation(libs.androidx.foundation)
+    //Coroutines
+    implementation(libs.coroutine.core)
+    implementation(libs.coroutine.android)
     //Coil
     implementation(libs.coil)
     //Palette
@@ -77,6 +81,7 @@ dependencies {
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
+    //Unit Test
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
