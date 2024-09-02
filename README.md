@@ -23,7 +23,7 @@ R8 enabled <br />
 
 # Modules contain
 ## compose_ui
- ### This module contain the two screens of the app, list of dynamic items and the details screen (this module is like a feature of the app - we can have many different features)
+ This module contain the two screens of the app, list of dynamic items and the details screen (this module is like a feature of the app - we can have many different features)
 - List Screen
 - Details Screen
 - Generic Views
