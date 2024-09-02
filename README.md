@@ -1,4 +1,4 @@
-# Pokendex Compose Multi-Module
+# Pokedex Compose Multi-Module
 This Pokedex - Pokemon app is a project that contain and apply the latest Android technologies recommended by Google such as Multi Module Example Jetpack Compose, the new way to build the design.
 Also, it contains some other important technologies such as Room Database, KSP, Hilt Dependencies Injection, the new Shared Element Transaction and new Navigation Type Safety.
 
