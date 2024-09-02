@@ -2,6 +2,20 @@
 This Pokedex - Pokemon app is a project that contain and apply the latest Android technologies recommended by Google such as Multi Module Example Jetpack Compose, the new way to build the design.
 Also, it contains some other important technologies such as Room Database, KSP, Hilt Dependencies Injection, the new Shared Element Transaction and new Navigation Type Safety.
 
+# Modules contain
+## compose_ui
+ - List Screen
+ - Details Screen
+ - Generic Views
+ - Utils
+## database
+ - Room Database
+ - Models
+ - DI for Database
+## navigation
+ - Screens
+ - Navigation
+
 # The Project Contain the following technologies
 Kotlin - https://kotlinlang.org/docs/getting-started.html <br />
 Jetpack Compose https://developer.android.com/develop/ui/compose <br />
