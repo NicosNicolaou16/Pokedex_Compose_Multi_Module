@@ -2,6 +2,14 @@
 This Pokedex - Pokemon app is a project that contain and apply the latest Android technologies recommended by Google such as Multi Module Example Jetpack Compose, the new way to build the design.
 Also, it contains some other important technologies such as Room Database, KSP, Hilt Dependencies Injection, the new Shared Element Transaction and new Navigation Type Safety.
 
+# Examples
+<p align="left">
+  <a title="simulator_image"><img src="examples/Screenshot_20240511_012335.png" height="500" width="200"></a>
+  <a title="simulator_image"><img src="examples/Screenshot_20240816_221338.png" height="500" width="200"></a>
+  <a title="simulator_image"><img src="examples/Screenshot_20240816_221449.png" height="500" width="200"></a>
+  <a title="simulator_image"><img src="examples/example_gif1.gif" height="500" width="200"></a>
+</p>
+
 # The Project Contain the following technologies
 Kotlin - https://kotlinlang.org/docs/getting-started.html <br />
 Jetpack Compose https://developer.android.com/develop/ui/compose <br />
@@ -44,14 +52,6 @@ This module contain network manager from the remote, the service with apis and t
 - Repositories
 - Utils
 - DI
-
-# Examples
-<p align="left">
-  <a title="simulator_image"><img src="examples/Screenshot_20240511_012335.png" height="500" width="200"></a>
-  <a title="simulator_image"><img src="examples/Screenshot_20240816_221338.png" height="500" width="200"></a>
-  <a title="simulator_image"><img src="examples/Screenshot_20240816_221449.png" height="500" width="200"></a>
-  <a title="simulator_image"><img src="examples/example_gif1.gif" height="500" width="200"></a>
-</p>
 
 # How to create a Module for an app from Android Studio
 File -> New -> New Module -> Android Library -> Add your own Module Name -> Finish.
