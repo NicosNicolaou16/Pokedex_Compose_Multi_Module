@@ -37,16 +37,16 @@ This module contain the two screens of the app, list of dynamic items and the de
 - Generic Views
 - Utils
 ## database
-This module contain the database, model (handle the data).
+This module contain the database, model (handle the data). (Core Module)
 - Room Database
 - Models
 - DI for Database
 ## navigation
-This module contain the navigation between the screens.
+This module contain the navigation between the screens.(Core Module)
 - Screens Routes
 - Navigation
 ## network
-This module contain network manager from the remote, the service with apis and the repositories.
+This module contain network manager from the remote, the service with apis and the repositories.(Core Module)
 - Network Manager
 - Services
 - Repositories
