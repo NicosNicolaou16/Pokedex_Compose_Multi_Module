@@ -51,7 +51,7 @@ This module contain network manager from the remote, the service with apis and t
 - Services
 - Repositories
 - Utils
-- DI
+- DI for Network
 
 # How to create a Module for an app from Android Studio
 File -> New -> New Module -> Android Library -> Add your own Module Name -> Finish.
