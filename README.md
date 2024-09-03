@@ -30,22 +30,22 @@ Offline Support <br />
 R8 enabled <br />
 
 # Modules contain
-## compose_ui
+## compose_ui (Features)
 This module contain the two screens of the app, list of dynamic items and the details screen (this module is like a feature of the app - we can have many different features).
 - List Screen
 - Details Screen
 - Generic Views
 - Utils
-## database
+## database (Core)
 This module contain the database, model (handle the data). (Core Module)
 - Room Database
 - Models
 - DI for Database
-## navigation
+## navigation (Core)
 This module contain the navigation between the screens.(Core Module)
 - Screens Routes
 - Navigation
-## network
+## network (Core)
 This module contain network manager from the remote, the service with apis and the repositories.(Core Module)
 - Network Manager
 - Services
