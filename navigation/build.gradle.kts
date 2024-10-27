@@ -8,13 +8,13 @@ plugins {
 
 android {
     namespace = "com.nicos.navigation"
-    buildToolsVersion = "34.0.0"
-    compileSdk = 34
+    buildToolsVersion = "35.0.0"
+    compileSdk = 35
 
     defaultConfig {
-        minSdk = 27
-        testOptions.targetSdk = 34
-        lint.targetSdk = 34
+        minSdk = 28
+        testOptions.targetSdk = 35
+        lint.targetSdk = 35
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
