@@ -58,14 +58,6 @@ The percentage for showing the skills of each Pokémon is calculated using
 the [PercentageWithAnimation](https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose)
 built by @NicosNicolaou16. <br />
 
-# Others
-
-UI State <br />
-View Model <br />
-Repository <br />
-Offline Support <br />
-R8 enabled <br />
-
 # Modules contain
 
 ## compose_ui (Features)
