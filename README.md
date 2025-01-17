@@ -58,45 +58,48 @@ The percentage for showing the skills of each Pokémon is calculated using
 the [PercentageWithAnimation](https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose)
 built by [NicosNicolaou16](https://github.com/NicosNicolaou16). <br />
 
-# Modules contain
+# Modules Overview
 
-## compose_ui (Features)
+## compose_ui (Feature)
 
-This module contain the two screens of the app, list of dynamic items and the details screen (this
-module is like a feature of the app - we can have many different features).
+This module contains the UI components of the app, including the list of dynamic items and the
+details screen. It serves as a feature module, which means additional features can be added in the
+future.
 
 - List Screen
 - Details Screen
 - Generic Views
-- Utils
+- Utilities
 
 ## database (Core)
 
-This module contain the database, model (handle the data). (Core Module)
+This module handles the app's database and models, managing data persistence. It is a core module
+responsible for data management.
 
 - Room Database
-- Models
-- DI for Database
+- Data Models
+- Dependency Injection for Database
 
 ## navigation (Core)
 
-This module contain the navigation between the screens.(Core Module)
+This module manages the navigation between screens, providing routes and navigation logic. It is a
+core module for routing within the app.
 
 - Screens Routes
-- Navigation
+- Navigation Logic
 
 ## network (Core)
 
-This module contain network manager from the remote, the service with apis and the repositories.(
-Core Module)
+This module handles all network-related operations, including the network manager, API services, and
+repositories. It is a core module responsible for remote data fetching and communication.
 
 - Network Manager
-- Services
+- API Services
 - Repositories
-- Utils
-- DI for Network
+- Utilities
+- Dependency Injection for Network
 
-# How to create a Module (Android Library) for an app from Android Studio
+# How to Create an Android Library Module for an App in Android Studio
 
 File -> New -> New Module -> Android Library -> Add your own Module Name -> Finish.
 
