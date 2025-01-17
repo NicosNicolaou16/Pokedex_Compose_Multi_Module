@@ -104,8 +104,8 @@ File -> New -> New Module -> Android Library -> Add your own Module Name -> Fini
 
 Target SDK version: 35 <br />
 Minimum SDK version: 28 <br />
-Kotlin version: 2.0.21 <br />
-Gradle version: 8.7.1 <br />
+Kotlin version: 2.1.0 <br />
+Gradle version: 8.8.0 <br />
 
 # Feeds/Urls/End Point (parsing some data from the response)
 
