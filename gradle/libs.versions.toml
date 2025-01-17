@@ -1,39 +1,40 @@
 [versions]
-agp = "8.7.1"
-kotlin = "2.0.21"
-coreKtx = "1.13.1"
+agp = "8.8.0"
+kotlin = "2.1.0"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.6"
-activityCompose = "1.9.3"
-composeVersion = "1.7.4"
-composeBom = "2024.10.00"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.10.0"
+composeVersion = "1.7.6"
+composeBom = "2025.01.00"
 composeHiltNavigationVersion = "1.2.0"
-composeNavigationVersion = "2.8.3"
-uiComposeVersion = "1.7.4"
-animationComposeVersion = "1.7.4"
-foundationComposeVersion = "1.7.4"
-kspVersion = "2.0.21-1.0.26"
+composeNavigationVersion = "2.8.5"
+uiComposeVersion = "1.7.6"
+animationComposeVersion = "1.7.6"
+foundationComposeVersion = "1.7.6"
+kspVersion = "2.1.0-1.0.29"
 roomVersion = "2.6.1"
 retrofitVersion = "2.11.0"
 okHttpVersion = "4.12.0"
 coilVersion = "2.7.0"
-coroutineVersion = "1.9.0"
+coroutineVersion = "1.10.1"
 materialVersion = "1.12.0"
-hiltVersion = "2.52"
+hiltVersion = "2.55"
 hiltCompilerVersion = "1.2.0"
 swipeRefreshLayoutVersion = "1.1.0"
 gsonVersion = "2.11.0"
 paletteVersion = "1.0.0"
-kotlinSerializationVersion = "1.7.3"
-percentagesWithAnimationComposeVersion = "1.2.0"
+kotlinSerializationVersion = "1.8.0"
 appcompat = "1.7.0"
+percentagesWithAnimationComposeVersion = "1.2.2"
 
 [libraries]
 # My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
 percentages-with-animation-compose = { group = "com.github.NicosNicolaou16", name = "PercentagesWithAnimationCompose", version.ref = "percentagesWithAnimationComposeVersion" }
 # Architecture
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-swipe-refresh-layout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeRefreshLayoutVersion" }
@@ -84,7 +85,6 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "composeVersion" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
