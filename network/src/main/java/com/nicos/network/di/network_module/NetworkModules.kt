@@ -1,6 +1,6 @@
-package com.nicos.network.di.network.services
+package com.nicos.network.di.network_module
 
-import com.nicos.network.domain.remote.PokemonService
+import com.nicos.network.domain.remote.init_network.MyNetworkManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,11 +10,10 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class PokemonModule {
+object NetworkModules {
+
 
     @Provides
     @Singleton
-    fun getPokemonList(retrofit: Retrofit): PokemonService {
-        return retrofit.create(PokemonService::class.java)
-    }
+    fun requestBuilder(): Retrofit = MyNetworkManager.initNetworkManager()
 }
