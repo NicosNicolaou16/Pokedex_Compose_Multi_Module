@@ -1,4 +1,4 @@
-package com.nicos.network.domain.repositories
+package com.nicos.network.data.repository_impl
 
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
@@ -8,7 +8,7 @@ import com.nicos.network.generic_classes.Resource
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
-class PokemonListRepository @Inject constructor(
+class PokemonListRepositoryImpl @Inject constructor(
     private val myRoomDatabase: MyRoomDatabase,
     private val pokemonService: PokemonService,
     private val handlingError: HandlingError,
