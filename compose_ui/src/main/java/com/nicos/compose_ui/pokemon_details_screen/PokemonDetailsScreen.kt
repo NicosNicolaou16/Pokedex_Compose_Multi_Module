@@ -45,7 +45,7 @@ import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsD
 import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsViewTypes
 import com.nicos.percentageswithanimationcompose.LinearPercentage
 import com.nicos.percentageswithanimationcompose.enums.LeftAndRightText
-import com.nicos.compose_ui.generic_compose_views.CustomToolbar
+import com.nicos.compose_ui.components.CustomToolbar
 import com.nicos.compose_ui.utils.extensions.colorToInt
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
 import com.nicos.compose_ui.utils.extensions.upperCaseFirstLetter
@@ -163,7 +163,7 @@ fun SharedTransitionScope.ImageAndName(
                 modifier = Modifier
                     .fillMaxSize()
                     .sharedElement(
-                        state = rememberSharedContentState(
+                        sharedContentState = rememberSharedContentState(
                             key = pokemonDetailsDataModel.imageUrl ?: ""
                         ),
                         animatedVisibilityScope = animatedVisibilityScope,

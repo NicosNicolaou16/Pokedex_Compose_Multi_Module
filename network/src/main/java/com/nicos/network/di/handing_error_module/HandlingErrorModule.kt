@@ -1,4 +1,4 @@
-package com.nicos.network.di.handing_error
+package com.nicos.network.di.handing_error_module
 
 import android.content.Context
 import com.nicos.network.generic_classes.HandlingError

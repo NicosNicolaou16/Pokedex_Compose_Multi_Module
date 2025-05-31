@@ -1,4 +1,4 @@
-package com.nicos.database.di.database
+package com.nicos.database.di
 
 import android.content.Context
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
@@ -19,7 +19,7 @@ object MyRoomDatabaseModule {
     @Singleton
     fun initRoomDataBase(@ApplicationContext context: Context): MyRoomDatabase {
         return synchronized(LOCK) {
-            MyRoomDatabase.initDatabase(context = context)
+            MyRoomDatabase.Companion.initDatabase(context = context)
         }
     }
 }

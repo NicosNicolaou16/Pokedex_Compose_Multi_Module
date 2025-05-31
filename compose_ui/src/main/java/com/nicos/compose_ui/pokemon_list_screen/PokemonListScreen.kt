@@ -32,9 +32,9 @@ import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
 import com.nicos.database.data.room_database.entities.PokemonEntity
-import com.nicos.compose_ui.generic_compose_views.CustomToolbar
-import com.nicos.compose_ui.generic_compose_views.ShowDialog
-import com.nicos.compose_ui.generic_compose_views.StartDefaultLoader
+import com.nicos.compose_ui.components.CustomToolbar
+import com.nicos.compose_ui.components.ShowDialog
+import com.nicos.compose_ui.components.StartDefaultLoader
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -126,7 +126,7 @@ fun SharedTransitionScope.LoadPokemonImage(
             }.build(),
             modifier = Modifier
                 .sharedElement(
-                    state = rememberSharedContentState(key = pokemonEntity.imageUrl ?: ""),
+                    sharedContentState = rememberSharedContentState(key = pokemonEntity.imageUrl ?: ""),
                     animatedVisibilityScope = animatedVisibilityScope,
                 )
                 .fillMaxSize(),
