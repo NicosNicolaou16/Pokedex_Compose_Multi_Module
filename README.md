@@ -78,7 +78,7 @@ future.
 
 - List Screen
 - Details Screen
-- Generic Views
+- Components (Generic Views)
 - Utilities
 
 ## database (Core)
