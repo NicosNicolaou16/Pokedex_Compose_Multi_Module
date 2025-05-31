@@ -1,4 +1,4 @@
-package com.nicos.compose_ui.generic_compose_views
+package com.nicos.compose_ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
