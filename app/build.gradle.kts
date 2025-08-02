@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -8,13 +10,13 @@ plugins {
 
 android {
     namespace = "com.nicos.pokedex_compose_multi_module"
-    buildToolsVersion = "35.0.1"
-    compileSdk = 35
+    buildToolsVersion = "36.0.0"
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.nicos.pokedex_compose_multi_module"
-        minSdk = 28
-        targetSdk = 35
+        minSdk = 29
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -46,8 +48,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.fromTarget("17")
+            freeCompilerArgs = listOf("-Xannotation-default-target=param-property")
+        }
     }
     buildFeatures {
         compose = true
@@ -64,11 +69,11 @@ android {
 
 dependencies {
 
-    //Modules
-    implementation(project(":navigation"))
-    //Architecture
+    // Modules
+    implementation(projects.navigation)
+    // Architecture
     implementation(libs.androidx.core.ktx)
-    //Compose
+    // Compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -81,11 +86,11 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.animation)
     implementation(libs.androidx.foundation)
-    //Hilt
+    // Hilt
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
-    //Unit Test
+    // Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

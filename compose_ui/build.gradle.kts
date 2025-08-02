@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -8,13 +10,13 @@ plugins {
 
 android {
     namespace = "com.nicos.compose_ui"
-    buildToolsVersion = "35.0.0"
-    compileSdk = 35
+    buildToolsVersion = "36.0.0"
+    compileSdk = 36
 
     defaultConfig {
-        minSdk = 28
-        testOptions.targetSdk = 35
-        lint.targetSdk = 35
+        minSdk = 29
+        testOptions.targetSdk = 36
+        lint.targetSdk = 36
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -33,8 +35,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.fromTarget("17")
+            freeCompilerArgs = listOf("-Xannotation-default-target=param-property")
+        }
     }
     buildFeatures {
         compose = true
@@ -46,17 +51,17 @@ android {
 
 dependencies {
 
-    //Modules
-    implementation(project(":database"))
-    implementation(project(":network"))
+    // Modules
+    implementation(projects.database)
+    implementation(projects.network)
     // My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
     implementation(libs.percentages.with.animation.compose)
-    //Architecture
+    // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.swipe.refresh.layout)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    //Compose
+    // Compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -69,18 +74,18 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.animation)
     implementation(libs.androidx.foundation)
-    //Coroutines
+    // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
-    //Coil
+    // Coil
     implementation(libs.coil)
-    //Palette
+    // Palette
     implementation(libs.androidx.palette.ktx)
-    //Hilt
+    // Hilt
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
-    //Unit Test
+    // Unit Test
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -23,6 +23,7 @@ new Shared Element Transition, and the latest Navigation with Type Safety.
   <a title="simulator_image"><img src="examples/Screenshot_20240816_221338.png" height="500" width="200"></a>
   <a title="simulator_image"><img src="examples/Screenshot_20240816_221449.png" height="500" width="200"></a>
   <a title="simulator_image"><img src="examples/example_gif1.gif" height="500" width="200"></a>
+  <a title="simulator_image"><img src="examples/example_gif2.gif" height="500" width="200"></a>
 </p>
 
 # The Project Contain the following technologies
@@ -116,10 +117,10 @@ File -> New -> New Module -> Android Library -> Add your own Module Name -> Fini
 
 # Versioning
 
-Target SDK version: 35 <br />
-Minimum SDK version: 28 <br />
-Kotlin version: 2.1.21 <br />
-Gradle version: 8.10.1 <br />
+Target SDK version: 36 <br />
+Minimum SDK version: 29 <br />
+Kotlin version: 2.2.0 <br />
+Gradle version: 8.12.0 <br />
 
 # Feeds/Urls/End Point (parsing some data from the response)
 
@@ -127,3 +128,13 @@ Gradle version: 8.10.1 <br />
 
 https://pokeapi.co/ <br />
 https://github.com/PokeAPI/sprites (GitHub) <br />
+
+# References
+
+https://fvilarino.medium.com/shared-element-transitions-in-jetpack-compose-8f553078101e <br />
+https://getstream.io/blog/shared-element-compose/  <br />
+https://medium.com/androiddevelopers/navigation-compose-meet-type-safety-e081fb3cf2f8  <br />
+https://dribbble.com/shots/6540871-Pokedex-App# - Get some UI - not completely use it (CHECK THE
+LINK FOR THE DESIGN)  <br />
+https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series)?file=Pok%C3%A9_Ball_Redraw_by_oykawoo.png - app icon <bf />
+https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series) - app icon <bf />
