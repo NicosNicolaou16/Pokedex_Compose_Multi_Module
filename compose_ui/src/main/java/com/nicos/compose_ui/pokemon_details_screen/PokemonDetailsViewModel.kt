@@ -9,6 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -29,14 +30,18 @@ class PokemonDetailsViewModel @Inject constructor(
         pokemonDetailsRepositoryImpl.fetchPokemonDetails(url, name).let { resource ->
             when (resource) {
                 is Resource.Success -> {
-                    _pokemonDetailsState.value =
-                        _pokemonDetailsState.value.copy(
-                            isLoading = false,
-                            pokemonDetailsDataModelList = PokemonDetailsDataModel.createPokemonDetailsDataModel(
-                                resource.data,
-                                imageUrl = imageUrl
-                            )
+                    val pokemonDetailsDataModelList =
+                        PokemonDetailsDataModel.createPokemonDetailsDataModel(
+                            resource.data,
+                            imageUrl = imageUrl
                         )
+                    withContext(Dispatchers.Main) {
+                        _pokemonDetailsState.value =
+                            _pokemonDetailsState.value.copy(
+                                isLoading = false,
+                                pokemonDetailsDataModelList = pokemonDetailsDataModelList
+                            )
+                    }
                 }
 
                 is Resource.Error -> {
@@ -55,14 +60,18 @@ class PokemonDetailsViewModel @Inject constructor(
         pokemonDetailsRepositoryImpl.offline(name).let { resource ->
             when (resource) {
                 is Resource.Success -> {
-                    _pokemonDetailsState.value =
-                        _pokemonDetailsState.value.copy(
-                            isLoading = false,
-                            pokemonDetailsDataModelList = PokemonDetailsDataModel.createPokemonDetailsDataModel(
-                                resource.data,
-                                imageUrl = imageUrl
-                            )
+                    val pokemonDetailsDataModelList =
+                        PokemonDetailsDataModel.createPokemonDetailsDataModel(
+                            resource.data,
+                            imageUrl = imageUrl
                         )
+                    withContext(Dispatchers.Main) {
+                        _pokemonDetailsState.value =
+                            _pokemonDetailsState.value.copy(
+                                isLoading = false,
+                                pokemonDetailsDataModelList = pokemonDetailsDataModelList
+                            )
+                    }
                 }
 
                 is Resource.Error -> {
