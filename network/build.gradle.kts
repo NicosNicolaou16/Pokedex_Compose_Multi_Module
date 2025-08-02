@@ -44,28 +44,28 @@ android {
 
 dependencies {
 
-    //Modules
-    implementation(project(":database"))
-    //Architecture
+    // Modules
+    implementation(projects.database)
+    // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    //Retrofit
+    // Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
-    //OkHttp
+    // OkHttp
     implementation(libs.okHttp)
-    //Gson
+    // Gson
     implementation(libs.gson)
-    //Coroutines
+    // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
-    //Material
+    // Material
     implementation(libs.material)
-    //Hilt
+    // Hilt
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
-    //Unit Test
+    // Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

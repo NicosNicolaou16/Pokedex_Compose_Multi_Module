@@ -51,18 +51,18 @@ android {
 
 dependencies {
 
-    //Modules
-    implementation(project(":compose_ui"))
-    implementation(project(":database"))
-    //Architecture
+    // Modules
+    implementation(projects.composeUi)
+    implementation(projects.database)
+    // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    //Compose
+    // Compose
     api(libs.androidx.navigate.compose)
     //Serialization
     implementation(libs.kotlinx.serialization.json)
-    //Unit Test
+    // Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

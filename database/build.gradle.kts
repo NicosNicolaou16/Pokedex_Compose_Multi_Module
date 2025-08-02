@@ -44,26 +44,26 @@ android {
 
 dependencies {
 
-    //Architecture
+    // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    //Room Database
+    // Room Database
     api(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
-    //Gson
+    // Gson
     implementation(libs.gson)
-    //Coroutines
+    // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
-    //Material
+    // Material
     implementation(libs.material)
-    //Hilt
+    // Hilt
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
-    //Unit Test
+    // Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

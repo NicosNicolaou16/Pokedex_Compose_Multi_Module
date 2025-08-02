@@ -51,17 +51,17 @@ android {
 
 dependencies {
 
-    //Modules
-    implementation(project(":database"))
-    implementation(project(":network"))
+    // Modules
+    implementation(projects.database)
+    implementation(projects.network)
     // My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
     implementation(libs.percentages.with.animation.compose)
-    //Architecture
+    // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.swipe.refresh.layout)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    //Compose
+    // Compose
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
@@ -74,18 +74,18 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.animation)
     implementation(libs.androidx.foundation)
-    //Coroutines
+    // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
-    //Coil
+    // Coil
     implementation(libs.coil)
-    //Palette
+    // Palette
     implementation(libs.androidx.palette.ktx)
-    //Hilt
+    // Hilt
     implementation(libs.dagger.android)
     ksp(libs.dagger.compiler)
     ksp(libs.hilt.compiler)
-    //Unit Test
+    // Unit Test
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

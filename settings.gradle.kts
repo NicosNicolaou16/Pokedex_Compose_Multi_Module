@@ -20,6 +20,8 @@ dependencyResolutionManagement {
     }
 }
 
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 rootProject.name = "Pokedex_Compose_Multi_Module"
 include(":app")
 include(":database")
