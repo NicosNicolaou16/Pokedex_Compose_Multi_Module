@@ -9,13 +9,13 @@ plugins {
 
 android {
     namespace = "com.nicos.network"
-    buildToolsVersion = "35.0.0"
-    compileSdk = 35
+    buildToolsVersion = "36.0.0"
+    compileSdk = 36
 
     defaultConfig {
-        minSdk = 28
-        testOptions.targetSdk = 35
-        lint.targetSdk = 35
+        minSdk = 29
+        testOptions.targetSdk = 36
+        lint.targetSdk = 36
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
