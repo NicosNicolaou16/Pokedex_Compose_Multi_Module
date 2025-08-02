@@ -26,7 +26,6 @@ class PokemonDetailsViewModel @Inject constructor(
         imageUrl: String,
         name: String,
     ) = viewModelScope.launch(Dispatchers.IO) {
-        _pokemonDetailsState.value = _pokemonDetailsState.value.copy(isLoading = true)
         pokemonDetailsRepositoryImpl.fetchPokemonDetails(url, name).let { resource ->
             when (resource) {
                 is Resource.Success -> {
@@ -56,7 +55,6 @@ class PokemonDetailsViewModel @Inject constructor(
     }
 
     fun offline(imageUrl: String, name: String) = viewModelScope.launch(Dispatchers.IO) {
-        _pokemonDetailsState.value = _pokemonDetailsState.value.copy(isLoading = true)
         pokemonDetailsRepositoryImpl.offline(name).let { resource ->
             when (resource) {
                 is Resource.Success -> {
