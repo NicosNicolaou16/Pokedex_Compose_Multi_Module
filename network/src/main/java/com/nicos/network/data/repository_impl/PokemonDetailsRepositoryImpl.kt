@@ -6,7 +6,11 @@ import com.nicos.network.domain.remote.PokemonService
 import com.nicos.network.domain.repositories.PokemonDetailsRepository
 import com.nicos.network.generic_classes.HandlingError
 import com.nicos.network.generic_classes.Resource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class PokemonDetailsRepositoryImpl @Inject constructor(
@@ -18,15 +22,25 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
     override suspend fun fetchPokemonDetails(
         url: String,
         name: String
-    ): Resource<PokemonDetailsEntity> {
-        return try {
-            val pokemonDetailsEntity = pokemonService.getPokemonDetails(url = url)
-            savePokemonDetails(pokemonDetailsEntity = pokemonDetailsEntity)
+    ): Flow<Resource<PokemonDetailsEntity>> {
+        return flow {
+            try {
+                val pokemonDetails = pokemonService.getPokemonDetails(url = url)
+                savePokemonDetails(pokemonDetailsEntity = pokemonDetails)
+                val pokemonDetailsEntity = PokemonDetailsEntity.getPokemonDetails(
+                    pokemonName = name,
+                    myRoomDatabase = myRoomDatabase
+                )
 
-            Resource.Success(data = myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name))
-        } catch (e: Exception) {
-            Resource.Error(message = handlingError.handleErrorMessage(e))
-        }
+                emit(
+                    Resource.Success(
+                        data = pokemonDetailsEntity
+                    )
+                )
+            } catch (e: Exception) {
+                emit(Resource.Error(message = handlingError.handleErrorMessage(e)))
+            }
+        }.flowOn(Dispatchers.IO)
     }
 
     override suspend fun savePokemonDetails(pokemonDetailsEntity: PokemonDetailsEntity) =
@@ -35,11 +49,17 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
             myRoomDatabase = myRoomDatabase
         ).collect()
 
-    override suspend fun offline(name: String): Resource<PokemonDetailsEntity> {
-        return try {
-            Resource.Success(data = myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name))
-        } catch (e: Exception) {
-            Resource.Error(message = handlingError.handleErrorMessage(e))
-        }
+    override suspend fun offline(name: String): Flow<Resource<PokemonDetailsEntity>> {
+        return flow {
+            try {
+                emit(
+                    Resource.Success(
+                        data = myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name)
+                    )
+                )
+            } catch (e: Exception) {
+                emit(Resource.Error(message = handlingError.handleErrorMessage(e)))
+            }
+        }.flowOn(Dispatchers.IO)
     }
 }
