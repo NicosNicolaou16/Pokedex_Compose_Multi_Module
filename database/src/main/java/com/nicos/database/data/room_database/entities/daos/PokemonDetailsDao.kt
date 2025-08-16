@@ -10,6 +10,7 @@ import com.nicos.database.data.room_database.init_database.BaseDao
 @Dao
 interface PokemonDetailsDao : BaseDao<PokemonDetailsEntity, MutableList<PokemonDetailsEntity>> {
 
+    @Transaction
     @Query("SELECT * FROM pokemondetailsentity WHERE name=:name")
     suspend fun getPokemonInfoByName(name: String): PokemonDetailsEntity?
 
