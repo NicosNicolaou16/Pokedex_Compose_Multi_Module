@@ -31,7 +31,6 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
                     pokemonName = name,
                     myRoomDatabase = myRoomDatabase
                 )
-
                 emit(
                     Resource.Success(
                         data = pokemonDetailsEntity
@@ -52,9 +51,13 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
     override suspend fun offline(name: String): Flow<Resource<PokemonDetailsEntity>> {
         return flow {
             try {
+                val pokemonDetailsEntity = PokemonDetailsEntity.getPokemonDetails(
+                    pokemonName = name,
+                    myRoomDatabase = myRoomDatabase
+                )
                 emit(
                     Resource.Success(
-                        data = myRoomDatabase.pokemonDetailDao().getPokemonInfoByName(name)
+                        data = pokemonDetailsEntity
                     )
                 )
             } catch (e: Exception) {
