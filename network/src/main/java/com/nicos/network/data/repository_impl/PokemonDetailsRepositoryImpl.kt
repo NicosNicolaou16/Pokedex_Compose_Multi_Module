@@ -1,6 +1,7 @@
 package com.nicos.network.data.repository_impl
 
 import com.nicos.database.data.room_database.entities.PokemonDetailsEntity
+import com.nicos.database.data.room_database.entities.PokemonDetailsWithStatsEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
 import com.nicos.network.domain.remote.PokemonService
 import com.nicos.network.domain.repositories.PokemonDetailsRepository
@@ -22,18 +23,18 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
     override suspend fun fetchPokemonDetails(
         url: String,
         name: String
-    ): Flow<Resource<PokemonDetailsEntity>> {
+    ): Flow<Resource<PokemonDetailsWithStatsEntity>> {
         return flow {
             try {
                 val pokemonDetails = pokemonService.getPokemonDetails(url = url)
                 savePokemonDetails(pokemonDetailsEntity = pokemonDetails)
-                val pokemonDetailsEntity = PokemonDetailsEntity.getPokemonDetails(
+                val pokemonDetailsWithStatsEntity = PokemonDetailsEntity.getPokemonDetails(
                     pokemonName = name,
                     myRoomDatabase = myRoomDatabase
                 )
                 emit(
                     Resource.Success(
-                        data = pokemonDetailsEntity
+                        data = pokemonDetailsWithStatsEntity
                     )
                 )
             } catch (e: Exception) {
@@ -48,16 +49,16 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
             myRoomDatabase = myRoomDatabase
         ).collect()
 
-    override suspend fun offline(name: String): Flow<Resource<PokemonDetailsEntity>> {
+    override suspend fun offline(name: String): Flow<Resource<PokemonDetailsWithStatsEntity>> {
         return flow {
             try {
-                val pokemonDetailsEntity = PokemonDetailsEntity.getPokemonDetails(
+                val pokemonDetailsWithStatsEntity = PokemonDetailsEntity.getPokemonDetails(
                     pokemonName = name,
                     myRoomDatabase = myRoomDatabase
                 )
                 emit(
                     Resource.Success(
-                        data = pokemonDetailsEntity
+                        data = pokemonDetailsWithStatsEntity
                     )
                 )
             } catch (e: Exception) {
