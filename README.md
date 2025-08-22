@@ -120,7 +120,7 @@ File -> New -> New Module -> Android Library -> Add your own Module Name -> Fini
 Target SDK version: 36 <br />
 Minimum SDK version: 29 <br />
 Kotlin version: 2.2.10 <br />
-Gradle version: 8.12.0 <br />
+Gradle version: 8.12.1 <br />
 
 # Feeds/Urls/End Point (parsing some data from the response)
 
