@@ -1,9 +1,12 @@
-package com.nicos.network.data.repository_impl
+package com.nicos.database.data.repository_impl
 
 import androidx.core.text.isDigitsOnly
+import com.nicos.core.domain.PokemonUi
+import com.nicos.database.data.mappers.toPokemonUi
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.entities.toPokemonEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
+import com.nicos.network.domain.dto.PokemonDto
 import com.nicos.network.domain.remote.PokemonService
 import com.nicos.network.domain.repositories.PokemonListRepository
 import com.nicos.network.generic_classes.HandlingError
@@ -26,19 +29,19 @@ class PokemonListRepositoryImpl @Inject constructor(
         private const val PNG_FORMAT = ".png"
     }
 
-    override suspend fun fetchPokemonList(url: String?): Flow<Resource<MutableList<PokemonEntity>>> {
+    override suspend fun fetchPokemonList(url: String?): Flow<Resource<MutableList<PokemonUi>>> {
         return flow {
             try {
                 val pokemonService =
                     if (url == null) pokemonService.getPokemon() else pokemonService.getPokemon(url)
                 val nextUrl = pokemonService.nextUrl
-                val pokemonEntityList = pokemonService.results
-                savePokemon(pokemonEntityList = pokemonEntityList.map { it.toPokemonEntity() }
-                    .toMutableList())
+                val pokemonEntityList: MutableList<PokemonDto> = pokemonService.results
+                savePokemon(pokemonDto = pokemonEntityList)
 
                 emit(
                     Resource.Success(
-                        data = myRoomDatabase.pokemonDao().getAllPokemon(),
+                        data = myRoomDatabase.pokemonDao().getAllPokemon().map { it.toPokemonUi() }
+                            .toMutableList(),
                         nextUrl = nextUrl
                     )
                 )
@@ -48,8 +51,8 @@ class PokemonListRepositoryImpl @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
-    override suspend fun savePokemon(pokemonEntityList: MutableList<PokemonEntity>) {
-        pokemonEntityList.forEach {
+    override suspend fun savePokemon(pokemonDto: MutableList<PokemonDto>) {
+        pokemonDto.map { it.toPokemonEntity() }.forEach {
             buildPokemonImageUrl(it)
             if (it.imageUrl != null) {
                 myRoomDatabase.pokemonDao().insertOrReplaceObject(it)
@@ -66,10 +69,15 @@ class PokemonListRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun offline(): Flow<Resource<MutableList<PokemonEntity>>> {
+    override suspend fun offline(): Flow<Resource<MutableList<PokemonUi>>> {
         return flow {
             try {
-                emit(Resource.Success(data = myRoomDatabase.pokemonDao().getAllPokemon()))
+                emit(
+                    Resource.Success(
+                        data = myRoomDatabase.pokemonDao().getAllPokemon().map { it.toPokemonUi() }
+                            .toMutableList()
+                    )
+                )
             } catch (e: Exception) {
                 emit(Resource.Error(message = handlingError.handleErrorMessage(e)))
             }

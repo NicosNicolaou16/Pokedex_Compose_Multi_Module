@@ -46,6 +46,7 @@ dependencies {
 
     // Modules
     implementation(projects.network)
+    implementation(projects.core)
     // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
