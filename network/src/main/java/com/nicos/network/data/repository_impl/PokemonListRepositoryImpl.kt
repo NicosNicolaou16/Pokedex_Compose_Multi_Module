@@ -10,7 +10,6 @@ import com.nicos.network.generic_classes.HandlingError
 import com.nicos.network.generic_classes.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
@@ -49,7 +48,7 @@ class PokemonListRepositoryImpl @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
-    override suspend fun savePokemon(pokemonEntityList: MutableList<PokemonEntity>)  {
+    override suspend fun savePokemon(pokemonEntityList: MutableList<PokemonEntity>) {
         pokemonEntityList.forEach {
             buildPokemonImageUrl(it)
             if (it.imageUrl != null) {
