@@ -14,6 +14,10 @@ interface StatsDao : BaseDao<StatsEntity, MutableList<StatsEntity>> {
     suspend fun getPokemonStatsByName(name: String): MutableList<StatsEntity>
 
     @Transaction
+    @Query("DELETE FROM statsentity WHERE pokemonName=:name")
+    suspend fun deleteByPokemonName(name: String)
+
+    @Transaction
     @Query("DELETE FROM statsentity")
     suspend fun deleteAll()
 }
