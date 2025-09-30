@@ -89,7 +89,8 @@ This module handles the app's database and models, managing data persistence. It
 responsible for data management.
 
 - Room Database
-- Data Models
+- Mappers
+- Repositories Implementation
 - Dependency Injection for Database
 
 ## navigation (Core)
@@ -108,6 +109,7 @@ repositories. It is a core module responsible for remote data fetching and commu
 - Network Manager
 - API Services
 - Repositories
+- DTO
 - Utilities
 - Dependency Injection for Network
 
