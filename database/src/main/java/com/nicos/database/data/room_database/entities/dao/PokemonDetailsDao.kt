@@ -1,4 +1,4 @@
-package com.nicos.database.data.room_database.entities.daos
+package com.nicos.database.data.room_database.entities.dao
 
 import androidx.room.Dao
 import androidx.room.Query
@@ -17,4 +17,8 @@ interface PokemonDetailsDao : BaseDao<PokemonDetailsEntity, MutableList<PokemonD
     @Transaction
     @Query("SELECT * FROM pokemondetailsentity WHERE name=:name")
     suspend fun getPokemonDetailsWithStatsByName(name: String): PokemonDetailsWithStatsEntity?
+
+    @Transaction
+    @Query("SELECT * FROM pokemondetailsentity WHERE name=:name")
+    suspend fun getPokemonDetailsWithStatsAndStatsByName(name: String): PokemonDetailsWithStatsEntity?
 }

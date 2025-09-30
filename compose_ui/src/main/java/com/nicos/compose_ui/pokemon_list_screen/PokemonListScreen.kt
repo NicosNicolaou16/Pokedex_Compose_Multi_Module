@@ -27,20 +27,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
-import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.compose_ui.components.CustomToolbar
 import com.nicos.compose_ui.components.ShowDialog
 import com.nicos.compose_ui.components.StartDefaultLoader
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
+import com.nicos.core.domain.PokemonUi
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun SharedTransitionScope.PokemonListScreen(
-    listener: (PokemonEntity) -> Unit,
+    listener: (PokemonUi) -> Unit,
     animatedVisibilityScope: AnimatedVisibilityScope,
 ) {
     Scaffold(topBar = {
@@ -58,7 +58,7 @@ fun SharedTransitionScope.PokemonListScreen(
 
 @Composable
 fun SharedTransitionScope.GridViewPokemonList(
-    listener: (PokemonEntity) -> Unit,
+    listener: (PokemonUi) -> Unit,
     paddingValues: PaddingValues,
     animatedVisibilityScope: AnimatedVisibilityScope,
     pokemonListViewModel: PokemonListViewModel = hiltViewModel()
@@ -78,7 +78,7 @@ fun SharedTransitionScope.GridViewPokemonList(
             LoadPokemonImage(
                 listener = listener,
                 animatedVisibilityScope = animatedVisibilityScope,
-                pokemonEntity = pokemon
+                pokemonUi = pokemon
             )
         }
         item {
@@ -94,16 +94,16 @@ fun SharedTransitionScope.GridViewPokemonList(
 
 @Composable
 fun SharedTransitionScope.LoadPokemonImage(
-    listener: (PokemonEntity) -> Unit,
+    listener: (PokemonUi) -> Unit,
     animatedVisibilityScope: AnimatedVisibilityScope,
-    pokemonEntity: PokemonEntity
+    pokemonUi: PokemonUi
 ) {
     val context = LocalContext.current
     Card(
         modifier = Modifier
             .padding(5.dp)
             .clickable {
-                listener(pokemonEntity)
+                listener(pokemonUi)
             },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp
@@ -118,7 +118,7 @@ fun SharedTransitionScope.LoadPokemonImage(
     ) {
         AsyncImage(
             model = ImageRequest.Builder(context = context).apply {
-                data(pokemonEntity.imageUrl)
+                data(pokemonUi.imageUrl)
                 placeholder(getProgressDrawable(context))
                 error(android.R.drawable.stat_notify_error)
                 fallback(android.R.drawable.stat_notify_error)
@@ -126,7 +126,7 @@ fun SharedTransitionScope.LoadPokemonImage(
             }.build(),
             modifier = Modifier
                 .sharedElement(
-                    sharedContentState = rememberSharedContentState(key = pokemonEntity.imageUrl ?: ""),
+                    sharedContentState = rememberSharedContentState(key = pokemonUi.imageUrl ?: ""),
                     animatedVisibilityScope = animatedVisibilityScope,
                 )
                 .fillMaxSize(),

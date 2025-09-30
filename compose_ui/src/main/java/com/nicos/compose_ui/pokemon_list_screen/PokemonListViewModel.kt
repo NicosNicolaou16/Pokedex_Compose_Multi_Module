@@ -2,7 +2,7 @@ package com.nicos.compose_ui.pokemon_list_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nicos.network.data.repository_impl.PokemonListRepositoryImpl
+import com.nicos.database.data.repository_impl.PokemonListRepositoryImpl
 import com.nicos.network.generic_classes.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

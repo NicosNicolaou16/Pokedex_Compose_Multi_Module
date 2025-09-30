@@ -37,18 +37,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
-import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsDataModel
-import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsViewTypes
 import com.nicos.percentageswithanimationcompose.LinearPercentage
 import com.nicos.percentageswithanimationcompose.enums.LeftAndRightText
 import com.nicos.compose_ui.components.CustomToolbar
 import com.nicos.compose_ui.utils.extensions.colorToInt
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
 import com.nicos.compose_ui.utils.extensions.upperCaseFirstLetter
+import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsDataModel
+import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsViewTypes
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

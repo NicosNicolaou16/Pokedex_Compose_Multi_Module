@@ -83,16 +83,24 @@ future.
 - Components (Generic Views)
 - Utilities
 
-## database (Core)
+## Core
+
+This module handles the app's models and models for the UI.
+
+- Data Model Business Logic
+- Data Model UI
+
+## database
 
 This module handles the app's database and models, managing data persistence. It is a core module
 responsible for data management.
 
 - Room Database
-- Data Models
+- Mappers
+- Repositories Implementation
 - Dependency Injection for Database
 
-## navigation (Core)
+## navigation
 
 This module manages the navigation between screens, providing routes and navigation logic. It is a
 core module for routing within the app.
@@ -100,7 +108,7 @@ core module for routing within the app.
 - Screens Routes
 - Navigation Logic
 
-## network (Core)
+## network
 
 This module handles all network-related operations, including the network manager, API services, and
 repositories. It is a core module responsible for remote data fetching and communication.
@@ -108,6 +116,7 @@ repositories. It is a core module responsible for remote data fetching and commu
 - Network Manager
 - API Services
 - Repositories
+- DTO
 - Utilities
 - Dependency Injection for Network
 
@@ -119,8 +128,8 @@ File -> New -> New Module -> Android Library -> Add your own Module Name -> Fini
 
 Target SDK version: 36 <br />
 Minimum SDK version: 29 <br />
-Kotlin version: 2.2.10 <br />
-Gradle version: 8.12.1 <br />
+Kotlin version: 2.2.20 <br />
+Gradle version: 8.13.0 <br />
 
 # Feeds/Urls/End Point (parsing some data from the response)
 
@@ -136,5 +145,7 @@ https://getstream.io/blog/shared-element-compose/  <br />
 https://medium.com/androiddevelopers/navigation-compose-meet-type-safety-e081fb3cf2f8  <br />
 https://dribbble.com/shots/6540871-Pokedex-App# - Get some UI - not completely use it (CHECK THE
 LINK FOR THE DESIGN)  <br />
-https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series)?file=Pok%C3%A9_Ball_Redraw_by_oykawoo.png - app icon <bf />
-https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series) - app icon <bf />
+https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series)?file=Pok%C3%A9_Ball_Redraw_by_oykawoo.png -
+app icon <bf />
+https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series) - app
+icon <bf />

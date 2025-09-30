@@ -33,7 +33,7 @@
 #-keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class com.nicos.database.data.models.pokemon_response_model.PokemonResponse.** { <fields>; }
+-keep class com.nicos.network.data.pokemon_response_model.PokemonResponse.** { <fields>; }
 -keep class com.nicos.database.data.room_database.entities.** { <fields>; }
 
 # Prevent proguard from stripping interface information from TypeAdapter, TypeAdapterFactory,

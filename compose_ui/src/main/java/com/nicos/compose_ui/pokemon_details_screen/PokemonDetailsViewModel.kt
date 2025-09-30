@@ -2,8 +2,8 @@ package com.nicos.compose_ui.pokemon_details_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsDataModel
-import com.nicos.network.data.repository_impl.PokemonDetailsRepositoryImpl
+import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsDataModel
+import com.nicos.database.data.repository_impl.PokemonDetailsRepositoryImpl
 import com.nicos.network.generic_classes.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
