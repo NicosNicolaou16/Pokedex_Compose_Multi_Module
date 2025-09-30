@@ -83,7 +83,14 @@ future.
 - Components (Generic Views)
 - Utilities
 
-## database (Core)
+## Core
+
+This module handles the app's models and models for the UI.
+
+- Data Model Business Logic
+- Data Model UI
+
+## database
 
 This module handles the app's database and models, managing data persistence. It is a core module
 responsible for data management.
@@ -93,7 +100,7 @@ responsible for data management.
 - Repositories Implementation
 - Dependency Injection for Database
 
-## navigation (Core)
+## navigation
 
 This module manages the navigation between screens, providing routes and navigation logic. It is a
 core module for routing within the app.
@@ -101,7 +108,7 @@ core module for routing within the app.
 - Screens Routes
 - Navigation Logic
 
-## network (Core)
+## network
 
 This module handles all network-related operations, including the network manager, API services, and
 repositories. It is a core module responsible for remote data fetching and communication.
@@ -138,5 +145,7 @@ https://getstream.io/blog/shared-element-compose/  <br />
 https://medium.com/androiddevelopers/navigation-compose-meet-type-safety-e081fb3cf2f8  <br />
 https://dribbble.com/shots/6540871-Pokedex-App# - Get some UI - not completely use it (CHECK THE
 LINK FOR THE DESIGN)  <br />
-https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series)?file=Pok%C3%A9_Ball_Redraw_by_oykawoo.png - app icon <bf />
-https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series) - app icon <bf />
+https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series)?file=Pok%C3%A9_Ball_Redraw_by_oykawoo.png -
+app icon <bf />
+https://ideas.fandom.com/wiki/Pok%C3%A9_Ball_Pok%C3%A9mon_Ideas_(Super_Smash_Bros._series) - app
+icon <bf />
