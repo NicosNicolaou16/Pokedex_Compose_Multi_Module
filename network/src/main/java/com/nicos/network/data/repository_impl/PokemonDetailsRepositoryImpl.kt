@@ -2,7 +2,9 @@ package com.nicos.network.data.repository_impl
 
 import com.nicos.database.data.room_database.entities.PokemonDetailsEntity
 import com.nicos.database.data.room_database.entities.PokemonDetailsWithStatsEntity
+import com.nicos.database.data.room_database.entities.toPokemonDetailsEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
+import com.nicos.network.domain.dto.PokemonDetailsDto
 import com.nicos.network.domain.remote.PokemonService
 import com.nicos.network.domain.repositories.PokemonDetailsRepository
 import com.nicos.network.generic_classes.HandlingError
@@ -26,8 +28,8 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
     ): Flow<Resource<PokemonDetailsWithStatsEntity>> {
         return flow {
             try {
-                val pokemonDetails = pokemonService.getPokemonDetails(url = url)
-                savePokemonDetails(pokemonDetailsEntity = pokemonDetails)
+                val pokemonDetails: PokemonDetailsDto = pokemonService.getPokemonDetails(url = url)
+                savePokemonDetails(pokemonDetailsEntity = pokemonDetails.toPokemonDetailsEntity())
                 val pokemonDetailsWithStatsEntity = PokemonDetailsEntity.getPokemonDetails(
                     pokemonName = name,
                     myRoomDatabase = myRoomDatabase
@@ -43,11 +45,9 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
-    override suspend fun savePokemonDetails(pokemonDetailsEntity: PokemonDetailsEntity) =
-        PokemonDetailsEntity.savePokemonDetails(
-            pokemonDetailsEntity = pokemonDetailsEntity,
-            myRoomDatabase = myRoomDatabase
-        ).collect()
+    override suspend fun savePokemonDetails(pokemonDetailsEntity: PokemonDetailsEntity) {
+        myRoomDatabase.pokemonDetailDao().insertOrReplaceObject(pokemonDetailsEntity)
+    }
 
     override suspend fun offline(name: String): Flow<Resource<PokemonDetailsWithStatsEntity>> {
         return flow {

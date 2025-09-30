@@ -17,4 +17,8 @@ interface PokemonDetailsDao : BaseDao<PokemonDetailsEntity, MutableList<PokemonD
     @Transaction
     @Query("SELECT * FROM pokemondetailsentity WHERE name=:name")
     suspend fun getPokemonDetailsWithStatsByName(name: String): PokemonDetailsWithStatsEntity?
+
+    @Transaction
+    @Query("SELECT * FROM pokemondetailsentity WHERE name=:name")
+    suspend fun getPokemonDetailsWithStatsAndStatsByName(name: String): PokemonDetailsWithStatsEntity?
 }
