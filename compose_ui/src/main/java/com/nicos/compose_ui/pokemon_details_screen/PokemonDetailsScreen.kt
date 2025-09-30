@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -40,14 +41,14 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
-import com.nicos.database.pokemon_details_data_model.PokemonDetailsDataModel
-import com.nicos.database.pokemon_details_data_model.PokemonDetailsViewTypes
 import com.nicos.percentageswithanimationcompose.LinearPercentage
 import com.nicos.percentageswithanimationcompose.enums.LeftAndRightText
 import com.nicos.compose_ui.components.CustomToolbar
 import com.nicos.compose_ui.utils.extensions.colorToInt
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
 import com.nicos.compose_ui.utils.extensions.upperCaseFirstLetter
+import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsDataModel
+import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsViewTypes
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

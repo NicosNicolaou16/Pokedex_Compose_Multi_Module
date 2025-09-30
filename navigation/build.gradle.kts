@@ -54,6 +54,7 @@ dependencies {
     // Modules
     implementation(projects.composeUi)
     implementation(projects.database)
+    implementation(projects.core)
     // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

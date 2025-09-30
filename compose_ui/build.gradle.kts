@@ -54,6 +54,7 @@ dependencies {
     // Modules
     implementation(projects.database)
     implementation(projects.network)
+    implementation(projects.core)
     // My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
     implementation(libs.percentages.with.animation.compose)
     // Architecture
