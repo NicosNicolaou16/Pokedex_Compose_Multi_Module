@@ -1,4 +1,4 @@
-package com.nicos.database.data.models.pokemon_response_model
+package com.nicos.network.data.pokemon_response_model
 
 import com.google.gson.annotations.SerializedName
 import com.nicos.database.data.room_database.entities.PokemonEntity

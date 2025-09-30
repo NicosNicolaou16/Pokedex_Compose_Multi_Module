@@ -41,8 +41,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import coil.request.CachePolicy
 import coil.request.ImageRequest
-import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsDataModel
-import com.nicos.database.data.models.pokemon_details_data_model.PokemonDetailsViewTypes
+import com.nicos.compose_ui.pokemon_details_screen.pokemon_details_data_model.PokemonDetailsDataModel
+import com.nicos.compose_ui.pokemon_details_screen.pokemon_details_data_model.PokemonDetailsViewTypes
 import com.nicos.percentageswithanimationcompose.LinearPercentage
 import com.nicos.percentageswithanimationcompose.enums.LeftAndRightText
 import com.nicos.compose_ui.components.CustomToolbar

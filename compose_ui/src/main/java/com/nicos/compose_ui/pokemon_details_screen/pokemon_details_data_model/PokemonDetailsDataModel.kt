@@ -1,4 +1,4 @@
-package com.nicos.database.data.models.pokemon_details_data_model
+package com.nicos.compose_ui.pokemon_details_screen.pokemon_details_data_model
 
 import com.nicos.database.data.room_database.entities.PokemonDetailsWithStatsEntity
 import com.nicos.database.data.room_database.entities.StatsEntity
