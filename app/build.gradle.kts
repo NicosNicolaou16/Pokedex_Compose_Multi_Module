@@ -71,6 +71,8 @@ dependencies {
 
     // Modules
     implementation(projects.navigation)
+    implementation(projects.core)
+    implementation(projects.network)
     // Architecture
     implementation(libs.androidx.core.ktx)
     // Compose
