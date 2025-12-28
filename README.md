@@ -25,6 +25,11 @@ new Shared Element Transition, and the latest Navigation with Type Safety.
   <a title="simulator_image"><img src="examples/example_gif1.gif" height="500" width="200"></a>
   <a title="simulator_image"><img src="examples/example_gif2.gif" height="500" width="200"></a>
 </p>
+<p align="left">
+  <a title="simulator_image"><img src="examples/Screenshot_20251214_201927.png" height="500" width="400"></a>
+  &nbsp;
+  <a title="simulator_image"><img src="examples/example_gif3.gif" height="500" width="400"></a>
+</p>
 
 # The Project Contain the following technologies
 
@@ -66,6 +71,10 @@ to initial, loading, loaded and error. <br />
 [R8](https://developer.android.com/build/shrink-code) enabled, is a code shrinker and obfuscator for
 Android that optimizes and reduces the size of APKs by removing unused code and resources, while
 also obfuscating the remaining code to improve security. <br />
+[Navigation 3](https://developer.android.com/guide/navigation/navigation-3) for Jetpack Compose is a
+modern, Compose-native navigation system where you manage a
+stack of serializable destination keys and display them with NavDisplay, giving you direct control,
+state retention, and flexible adaptive UI without traditional graphs or routes. <br />
 The percentage for showing the skills of each Pokémon is calculated using
 the [PercentageWithAnimation](https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose)
 built by [@NicosNicolaou16](https://github.com/NicosNicolaou16). <br />
@@ -128,8 +137,8 @@ File -> New -> New Module -> Android Library -> Add your own Module Name -> Fini
 
 Target SDK version: 36 <br />
 Minimum SDK version: 29 <br />
-Kotlin version: 2.2.20 <br />
-Gradle version: 8.13.0 <br />
+Kotlin version: 2.3.0 <br />
+Gradle version: 8.13.2 <br />
 
 # Feeds/Urls/End Point (parsing some data from the response)
 
