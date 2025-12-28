@@ -27,6 +27,7 @@ new Shared Element Transition, and the latest Navigation with Type Safety.
 </p>
 <p align="left">
   <a title="simulator_image"><img src="examples/Screenshot_20251214_201927.png" height="500" width="400"></a>
+  &nbsp;
   <a title="simulator_image"><img src="examples/example_gif3.gif" height="500" width="400"></a>
 </p>
 
