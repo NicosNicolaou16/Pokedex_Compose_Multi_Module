@@ -33,6 +33,7 @@ fun Navigation(changeSystemBarStyle: (SystemBarStyle) -> Unit) {
 
     // Navigation Scene Strategy
     val listDetailStrategy = rememberListDetailSceneStrategy<NavKey>()
+
     SharedTransitionLayout {
         NavDisplay(
             backStack = navigationState.stacksInUse,
