@@ -7,6 +7,7 @@ import androidx.compose.animation.AnimatedVisibilityScope
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -21,9 +22,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onPlaced
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -68,24 +75,44 @@ fun SharedTransitionScope.GridViewPokemonList(
         title = stringResource(id = com.nicos.compose_ui.R.string.error),
         message = state.error
     )
-    LazyVerticalGrid(
-        modifier = Modifier.padding(top = paddingValues.calculateTopPadding()),
-        columns = GridCells.Fixed(2)
-    ) {
-        items(state.pokemonMutableList ?: mutableListOf(), key = { pokemon ->
-            pokemon.name
-        }) { pokemon ->
-            LoadPokemonImage(
-                listener = listener,
-                animatedVisibilityScope = animatedVisibilityScope,
-                pokemonUi = pokemon
-            )
-        }
-        item {
-            LaunchedEffect(key1 = true) {
-                if (!state.nextPage.isNullOrEmpty()) pokemonListViewModel.requestToFetchPokemon(
-                    state.nextPage
+    // State to hold the calculated number of columns
+    var columns by remember { mutableIntStateOf(2) }
+    // Get the screen density to convert px to dp
+    val density = LocalDensity.current
+    Box(
+        modifier = Modifier
+            .padding(paddingValues)
+            .fillMaxSize()
+            .onPlaced { coordinates ->
+                // This block is called after the Box is measured and placed.
+                // We get the measured width in pixels and convert it to Dp.
+                val widthInDp = with(density) { coordinates.size.width.toDp() }
+
+                // Calculate columns based on the actual width.
+                // Check for > 0.dp to avoid issues on the very first composition.
+                if (widthInDp > 0.dp) {
+                    columns = (widthInDp / 180.dp).toInt().coerceAtLeast(2)
+                }
+            }) {
+        LazyVerticalGrid(
+            modifier = Modifier.padding(top = paddingValues.calculateTopPadding()),
+            columns = GridCells.Fixed(columns)
+        ) {
+            items(state.pokemonMutableList ?: mutableListOf(), key = { pokemon ->
+                pokemon.name
+            }) { pokemon ->
+                LoadPokemonImage(
+                    listener = listener,
+                    animatedVisibilityScope = animatedVisibilityScope,
+                    pokemonUi = pokemon
                 )
+            }
+            item {
+                LaunchedEffect(key1 = true) {
+                    if (!state.nextPage.isNullOrEmpty()) pokemonListViewModel.requestToFetchPokemon(
+                        state.nextPage
+                    )
+                }
             }
         }
     }
