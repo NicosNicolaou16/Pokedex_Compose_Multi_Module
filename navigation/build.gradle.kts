@@ -59,8 +59,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    // Compose
-    // api(libs.androidx.navigate.compose)
     //Serialization
     implementation(libs.kotlinx.serialization.json)
     // Navigation 3
