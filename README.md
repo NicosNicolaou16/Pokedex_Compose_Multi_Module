@@ -25,6 +25,10 @@ new Shared Element Transition, and the latest Navigation with Type Safety.
   <a title="simulator_image"><img src="examples/example_gif1.gif" height="500" width="200"></a>
   <a title="simulator_image"><img src="examples/example_gif2.gif" height="500" width="200"></a>
 </p>
+<p align="left">
+  <a title="simulator_image"><img src="examples/Screenshot_20251214_201927.png" height="500" width="400"></a>
+  <a title="simulator_image"><img src="examples/example_gif3.gif" height="500" width="400"></a>
+</p>
 
 # The Project Contain the following technologies
 
