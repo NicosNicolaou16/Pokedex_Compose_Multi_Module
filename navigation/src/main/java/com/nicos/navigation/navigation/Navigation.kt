@@ -75,38 +75,4 @@ fun Navigation(changeSystemBarStyle: (SystemBarStyle) -> Unit) {
             }
         )
     }
-    /*SharedTransitionLayout {
-        NavHost(
-            navController = navController,
-            startDestination = PokemonList
-        ) {
-            composable<PokemonList> {
-                PokemonListScreen(
-                    listener = {
-                        navController.navigate(
-                            PokemonDetails(
-                                url = it.url?.encodeStringUrl() ?: "",
-                                imageUrl = it.imageUrl?.encodeStringUrl() ?: "",
-                                name = it.name,
-                            )
-                        )
-                    },
-                    animatedVisibilityScope = this@composable,
-                )
-            }
-            composable<PokemonDetails> {
-                val pokemonDetailsScreen: PokemonDetails = it.toRoute()
-                PokemonDetailsScreen(
-                    url = pokemonDetailsScreen.url.decodeStringUrl(),
-                    imageUrl = pokemonDetailsScreen.imageUrl.decodeStringUrl(),
-                    name = pokemonDetailsScreen.name,
-                    changeSystemBarStyle = changeSystemBarStyle,
-                    animatedVisibilityScope = this@composable,
-                    backButton = {
-                        navController.popBackStack()
-                    }
-                )
-            }
-        }
-    }*/
 }
