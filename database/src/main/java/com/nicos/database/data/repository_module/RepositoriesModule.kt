@@ -3,7 +3,7 @@ package com.nicos.database.data.repository_module
 import com.nicos.database.data.repository_impl.PokemonDetailsRepositoryImpl
 import com.nicos.database.data.repository_impl.PokemonListRepositoryImpl
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
-import com.nicos.network.domain.remote.PokemonService
+import com.nicos.network.data.remote.PokemonService
 import com.nicos.network.domain.repositories.PokemonDetailsRepository
 import com.nicos.network.domain.repositories.PokemonListRepository
 import com.nicos.network.generic_classes.HandlingError

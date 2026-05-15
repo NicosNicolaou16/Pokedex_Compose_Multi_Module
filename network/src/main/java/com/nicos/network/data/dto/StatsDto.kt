@@ -1,4 +1,4 @@
-package com.nicos.network.domain.dto
+package com.nicos.network.data.dto
 
 import com.google.gson.annotations.SerializedName
 

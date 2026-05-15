@@ -1,7 +1,7 @@
-package com.nicos.network.domain.remote
+package com.nicos.network.data.remote
 
 import com.nicos.network.data.pokemon_response_model.PokemonResponse
-import com.nicos.network.domain.dto.PokemonDetailsDto
+import com.nicos.network.data.dto.PokemonDetailsDto
 import retrofit2.http.GET
 import retrofit2.http.Url
 

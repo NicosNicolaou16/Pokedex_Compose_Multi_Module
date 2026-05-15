@@ -6,8 +6,8 @@ import com.nicos.database.data.mappers.toPokemonUi
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.entities.toPokemonEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
-import com.nicos.network.domain.dto.PokemonDto
-import com.nicos.network.domain.remote.PokemonService
+import com.nicos.network.data.dto.PokemonDto
+import com.nicos.network.data.remote.PokemonService
 import com.nicos.network.domain.repositories.PokemonListRepository
 import com.nicos.network.generic_classes.HandlingError
 import com.nicos.network.generic_classes.Resource

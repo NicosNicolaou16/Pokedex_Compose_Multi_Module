@@ -1,7 +1,7 @@
 package com.nicos.network.domain.repositories
 
 import com.nicos.core.data.PokemonDetailsUI
-import com.nicos.network.domain.dto.PokemonDetailsDto
+import com.nicos.network.data.dto.PokemonDetailsDto
 import com.nicos.network.generic_classes.Resource
 import kotlinx.coroutines.flow.Flow
 
