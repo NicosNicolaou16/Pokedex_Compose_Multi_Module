@@ -1,12 +1,10 @@
-package com.nicos.network.domain.repositories
+package com.nicos.core.domain.repositories
 
 import com.nicos.core.data.PokemonDetailsUI
-import com.nicos.network.data.dto.PokemonDetailsDto
-import com.nicos.network.generic_classes.Resource
+import com.nicos.core.utilities.Resource
 import kotlinx.coroutines.flow.Flow
 
 interface PokemonDetailsRepository {
     suspend fun fetchPokemonDetails(url: String, name: String): Flow<Resource<PokemonDetailsUI>>
-    suspend fun savePokemonDetails(pokemonDetailsDto: PokemonDetailsDto)
     suspend fun offline(name: String): Flow<Resource<PokemonDetailsUI>>
 }
