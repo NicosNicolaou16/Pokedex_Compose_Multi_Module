@@ -1,7 +1,7 @@
 package com.nicos.database.data.repository_impl
 
 import androidx.core.text.isDigitsOnly
-import com.nicos.core.domain.PokemonUi
+import com.nicos.core.data.PokemonUi
 import com.nicos.database.data.mappers.toPokemonUi
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.entities.toPokemonEntity

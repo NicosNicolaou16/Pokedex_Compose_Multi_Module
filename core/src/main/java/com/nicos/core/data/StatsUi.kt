@@ -1,4 +1,4 @@
-package com.nicos.core.domain
+package com.nicos.core.data
 
 data class StatsUi(
     var baseStat: Int?,

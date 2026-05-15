@@ -1,6 +1,6 @@
 package com.nicos.database.data.mappers
 
-import com.nicos.core.domain.PokemonDetailsUI
+import com.nicos.core.data.PokemonDetailsUI
 import com.nicos.database.data.room_database.entities.PokemonDetailsEntity
 import com.nicos.database.data.room_database.entities.PokemonDetailsWithStatsEntity
 

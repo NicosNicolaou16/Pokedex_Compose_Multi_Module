@@ -42,7 +42,7 @@ import com.nicos.compose_ui.components.CustomToolbar
 import com.nicos.compose_ui.components.ShowDialog
 import com.nicos.compose_ui.components.StartDefaultLoader
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
-import com.nicos.core.domain.PokemonUi
+import com.nicos.core.data.PokemonUi
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

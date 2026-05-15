@@ -1,6 +1,6 @@
 package com.nicos.database.data.repository_impl
 
-import com.nicos.core.domain.PokemonDetailsUI
+import com.nicos.core.data.PokemonDetailsUI
 import com.nicos.database.data.mappers.toPokemonDetailsUI
 import com.nicos.database.data.room_database.entities.PokemonDetailsWithStatsEntity
 import com.nicos.database.data.room_database.entities.toPokemonDetailsEntity

@@ -1,6 +1,6 @@
 package com.nicos.database.data.mappers
 
-import com.nicos.core.domain.StatsUi
+import com.nicos.core.data.StatsUi
 import com.nicos.database.data.room_database.entities.StatsEntity
 
 fun StatsEntity.toStatsUi(): StatsUi {

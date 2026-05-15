@@ -1,6 +1,6 @@
 package com.nicos.compose_ui.pokemon_list_screen
 
-import com.nicos.core.domain.PokemonUi
+import com.nicos.core.data.PokemonUi
 
 data class PokemonListState(
     val pokemonMutableList: MutableList<PokemonUi>? = null,

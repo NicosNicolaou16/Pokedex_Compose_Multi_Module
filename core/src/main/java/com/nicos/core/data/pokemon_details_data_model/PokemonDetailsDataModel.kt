@@ -1,7 +1,7 @@
-package com.nicos.core.domain.pokemon_details_data_model
+package com.nicos.core.data.pokemon_details_data_model
 
-import com.nicos.core.domain.PokemonDetailsUI
-import com.nicos.core.domain.StatsUi
+import com.nicos.core.data.PokemonDetailsUI
+import com.nicos.core.data.StatsUi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
