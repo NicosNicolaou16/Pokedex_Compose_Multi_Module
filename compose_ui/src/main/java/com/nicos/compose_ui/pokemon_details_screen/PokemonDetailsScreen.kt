@@ -47,8 +47,8 @@ import com.nicos.compose_ui.components.CustomToolbar
 import com.nicos.compose_ui.utils.extensions.colorToInt
 import com.nicos.compose_ui.utils.extensions.getProgressDrawable
 import com.nicos.compose_ui.utils.extensions.upperCaseFirstLetter
-import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsDataModel
-import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsViewTypes
+import com.nicos.core.data.pokemon_details_data_model.PokemonDetailsDataModel
+import com.nicos.core.data.pokemon_details_data_model.PokemonDetailsViewTypes
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

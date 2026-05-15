@@ -1,16 +1,16 @@
 package com.nicos.database.data.repository_impl
 
-import com.nicos.core.domain.PokemonDetailsUI
+import com.nicos.core.data.PokemonDetailsUI
 import com.nicos.database.data.mappers.toPokemonDetailsUI
 import com.nicos.database.data.room_database.entities.PokemonDetailsWithStatsEntity
 import com.nicos.database.data.room_database.entities.toPokemonDetailsEntity
 import com.nicos.database.data.room_database.entities.toStatsEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
-import com.nicos.network.domain.dto.PokemonDetailsDto
-import com.nicos.network.domain.remote.PokemonService
-import com.nicos.network.domain.repositories.PokemonDetailsRepository
+import com.nicos.network.data.dto.PokemonDetailsDto
+import com.nicos.network.data.remote.PokemonService
+import com.nicos.core.domain.repositories.PokemonDetailsRepository
 import com.nicos.network.generic_classes.HandlingError
-import com.nicos.network.generic_classes.Resource
+import com.nicos.core.utilities.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -45,7 +45,7 @@ class PokemonDetailsRepositoryImpl @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
-    override suspend fun savePokemonDetails(pokemonDetailsDto: PokemonDetailsDto) {
+    private suspend fun savePokemonDetails(pokemonDetailsDto: PokemonDetailsDto) {
         myRoomDatabase.statsDao().deleteByPokemonName(name = pokemonDetailsDto.name)
         myRoomDatabase.pokemonDetailDao()
             .insertOrReplaceObject(data = pokemonDetailsDto.toPokemonDetailsEntity())

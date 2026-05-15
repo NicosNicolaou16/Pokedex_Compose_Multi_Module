@@ -2,14 +2,10 @@ package com.nicos.database.data.room_database.entities
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
-import androidx.room.Ignore
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
-import com.nicos.database.data.room_database.init_database.MyRoomDatabase
-import com.nicos.network.domain.dto.StatDto
-import com.nicos.network.domain.dto.StatsDto
-import kotlinx.coroutines.flow.flow
+import com.nicos.network.data.dto.StatDto
+import com.nicos.network.data.dto.StatsDto
 
 @Entity(
     indices = [Index(value = ["id"], unique = true), Index(value = ["pokemonName"])],

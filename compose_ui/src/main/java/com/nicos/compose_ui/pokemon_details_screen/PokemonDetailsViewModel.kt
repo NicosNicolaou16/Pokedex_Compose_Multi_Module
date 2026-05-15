@@ -2,19 +2,18 @@ package com.nicos.compose_ui.pokemon_details_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nicos.core.domain.pokemon_details_data_model.PokemonDetailsDataModel
-import com.nicos.database.data.repository_impl.PokemonDetailsRepositoryImpl
-import com.nicos.network.generic_classes.Resource
+import com.nicos.core.data.pokemon_details_data_model.PokemonDetailsDataModel
+import com.nicos.core.domain.repositories.PokemonDetailsRepository
+import com.nicos.core.utilities.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
 class PokemonDetailsViewModel @Inject constructor(
-    private val pokemonDetailsRepositoryImpl: PokemonDetailsRepositoryImpl
+    private val pokemonDetailsRepository: PokemonDetailsRepository
 ) : ViewModel() {
 
     private val _pokemonDetailsState =
@@ -25,21 +24,19 @@ class PokemonDetailsViewModel @Inject constructor(
         url: String,
         imageUrl: String,
         name: String,
-    ) = viewModelScope.launch(Dispatchers.IO) {
-        pokemonDetailsRepositoryImpl.fetchPokemonDetails(url, name).collect { resource ->
+    ) = viewModelScope.launch(Dispatchers.Main) {
+        pokemonDetailsRepository.fetchPokemonDetails(url, name).collect { resource ->
             when (resource) {
                 is Resource.Success -> {
                     PokemonDetailsDataModel.createPokemonDetailsDataModel(
                         resource.data,
                         imageUrl = imageUrl
                     ).collect {
-                        withContext(Dispatchers.Main) {
-                            _pokemonDetailsState.value =
-                                _pokemonDetailsState.value.copy(
-                                    isLoading = false,
-                                    pokemonDetailsDataModelList = it
-                                )
-                        }
+                        _pokemonDetailsState.value =
+                            _pokemonDetailsState.value.copy(
+                                isLoading = false,
+                                pokemonDetailsDataModelList = it
+                            )
                     }
                 }
 
@@ -54,23 +51,20 @@ class PokemonDetailsViewModel @Inject constructor(
         }
     }
 
-    fun offline(imageUrl: String, name: String) = viewModelScope.launch(Dispatchers.IO) {
-        pokemonDetailsRepositoryImpl.offline(name).collect { resource ->
+    fun offline(imageUrl: String, name: String) = viewModelScope.launch(Dispatchers.Main) {
+        pokemonDetailsRepository.offline(name).collect { resource ->
             when (resource) {
                 is Resource.Success -> {
                     PokemonDetailsDataModel.createPokemonDetailsDataModel(
                         resource.data,
                         imageUrl = imageUrl
                     ).collect {
-                        withContext(Dispatchers.Main) {
-                            _pokemonDetailsState.value =
-                                _pokemonDetailsState.value.copy(
-                                    isLoading = false,
-                                    pokemonDetailsDataModelList = it
-                                )
-                        }
+                        _pokemonDetailsState.value =
+                            _pokemonDetailsState.value.copy(
+                                isLoading = false,
+                                pokemonDetailsDataModelList = it
+                            )
                     }
-
                 }
 
                 is Resource.Error -> {

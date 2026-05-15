@@ -2,19 +2,18 @@ package com.nicos.compose_ui.pokemon_list_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.nicos.database.data.repository_impl.PokemonListRepositoryImpl
-import com.nicos.network.generic_classes.Resource
+import com.nicos.core.domain.repositories.PokemonListRepository
+import com.nicos.core.utilities.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
 class PokemonListViewModel @Inject constructor(
-    private val pokemonListRepositoryImpl: PokemonListRepositoryImpl
+    private val pokemonListRepository: PokemonListRepository
 ) : ViewModel() {
 
     private val _pokemonListState = MutableStateFlow<PokemonListState>(PokemonListState())
@@ -25,18 +24,16 @@ class PokemonListViewModel @Inject constructor(
         offline()
     }
 
-    fun requestToFetchPokemon(url: String? = null) = viewModelScope.launch(Dispatchers.IO) {
-        pokemonListRepositoryImpl.fetchPokemonList(url = url).collect { resource ->
+    fun requestToFetchPokemon(url: String? = null) = viewModelScope.launch(Dispatchers.Main) {
+        pokemonListRepository.fetchPokemonList(url = url).collect { resource ->
             when (resource) {
                 is Resource.Success -> {
-                    withContext(Dispatchers.Main) {
-                        _pokemonListState.value =
-                            _pokemonListState.value.copy(
-                                isLoading = false,
-                                pokemonMutableList = resource.data,
-                                nextPage = resource.nextUrl
-                            )
-                    }
+                    _pokemonListState.value =
+                        _pokemonListState.value.copy(
+                            isLoading = false,
+                            pokemonMutableList = resource.data,
+                            nextPage = resource.nextUrl
+                        )
                 }
 
                 is Resource.Error -> {
@@ -50,17 +47,15 @@ class PokemonListViewModel @Inject constructor(
         }
     }
 
-    private fun offline() = viewModelScope.launch(Dispatchers.IO) {
-        pokemonListRepositoryImpl.offline().collect { resource ->
+    private fun offline() = viewModelScope.launch(Dispatchers.Main) {
+        pokemonListRepository.offline().collect { resource ->
             when (resource) {
                 is Resource.Success -> {
-                    withContext(Dispatchers.Main) {
-                        _pokemonListState.value =
-                            _pokemonListState.value.copy(
-                                isLoading = false,
-                                pokemonMutableList = resource.data
-                            )
-                    }
+                    _pokemonListState.value =
+                        _pokemonListState.value.copy(
+                            isLoading = false,
+                            pokemonMutableList = resource.data
+                        )
                 }
 
                 is Resource.Error -> {

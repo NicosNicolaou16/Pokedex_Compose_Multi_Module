@@ -1,6 +1,6 @@
-package com.nicos.network.domain.services
+package com.nicos.network.data.services
 
-import com.nicos.network.domain.remote.PokemonService
+import com.nicos.network.data.remote.PokemonService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

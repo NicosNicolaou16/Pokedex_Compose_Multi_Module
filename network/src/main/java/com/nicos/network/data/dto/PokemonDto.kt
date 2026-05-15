@@ -1,4 +1,4 @@
-package com.nicos.network.domain.dto
+package com.nicos.network.data.dto
 
 data class PokemonDto(
     val name: String,

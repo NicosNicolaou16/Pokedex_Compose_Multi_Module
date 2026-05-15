@@ -1,4 +1,4 @@
-package com.nicos.network.domain.remote.init_network
+package com.nicos.network.data.remote.init_network
 
 import com.google.gson.Gson
 import retrofit2.Retrofit

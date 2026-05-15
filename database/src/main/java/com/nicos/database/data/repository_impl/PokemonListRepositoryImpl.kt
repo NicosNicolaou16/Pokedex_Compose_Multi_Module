@@ -1,16 +1,16 @@
 package com.nicos.database.data.repository_impl
 
 import androidx.core.text.isDigitsOnly
-import com.nicos.core.domain.PokemonUi
+import com.nicos.core.data.PokemonUi
 import com.nicos.database.data.mappers.toPokemonUi
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.entities.toPokemonEntity
 import com.nicos.database.data.room_database.init_database.MyRoomDatabase
-import com.nicos.network.domain.dto.PokemonDto
-import com.nicos.network.domain.remote.PokemonService
-import com.nicos.network.domain.repositories.PokemonListRepository
+import com.nicos.network.data.dto.PokemonDto
+import com.nicos.network.data.remote.PokemonService
+import com.nicos.core.domain.repositories.PokemonListRepository
 import com.nicos.network.generic_classes.HandlingError
-import com.nicos.network.generic_classes.Resource
+import com.nicos.core.utilities.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -51,7 +51,7 @@ class PokemonListRepositoryImpl @Inject constructor(
         }.flowOn(Dispatchers.IO)
     }
 
-    override suspend fun savePokemon(pokemonDto: MutableList<PokemonDto>) {
+    private suspend fun savePokemon(pokemonDto: MutableList<PokemonDto>) {
         pokemonDto.map { it.toPokemonEntity() }.forEach {
             buildPokemonImageUrl(it)
             if (it.imageUrl != null) {

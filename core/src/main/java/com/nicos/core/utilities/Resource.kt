@@ -1,4 +1,4 @@
-package com.nicos.network.generic_classes
+package com.nicos.core.utilities
 
 sealed class Resource<T>(
     val data: T? = null,

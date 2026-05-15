@@ -1,6 +1,6 @@
 package com.nicos.database.data.mappers
 
-import com.nicos.core.domain.PokemonUi
+import com.nicos.core.data.PokemonUi
 import com.nicos.database.data.room_database.entities.PokemonEntity
 
 fun PokemonEntity.toPokemonUi(): PokemonUi {

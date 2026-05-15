@@ -1,6 +1,6 @@
 package com.nicos.network.di.network_module
 
-import com.nicos.network.domain.remote.init_network.MyNetworkManager
+import com.nicos.network.data.remote.init_network.MyNetworkManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
