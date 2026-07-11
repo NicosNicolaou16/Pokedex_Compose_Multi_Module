@@ -1,10 +1,10 @@
 package com.nicos.database.data.room_database.init_database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
+import androidx.room3.ColumnTypeConverters
+import androidx.room3.Database
+import androidx.room3.Room
+import androidx.room3.RoomDatabase
 import com.nicos.database.data.room_database.entities.PokemonDetailsEntity
 import com.nicos.database.data.room_database.entities.PokemonEntity
 import com.nicos.database.data.room_database.entities.StatsEntity
@@ -18,7 +18,7 @@ import com.nicos.database.data.room_database.type_converters.ConverterStats
     version = 1,
     exportSchema = false
 )
-@TypeConverters(ConverterStats::class/*, ConverterStat::class*/)
+@ColumnTypeConverters(ConverterStats::class/*, ConverterStat::class*/)
 abstract class MyRoomDatabase : RoomDatabase() {
 
     abstract fun pokemonDao(): PokemonDao
