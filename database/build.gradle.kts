@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.androidx.room)
 }
 
 android {
@@ -39,6 +40,10 @@ android {
             freeCompilerArgs = listOf("-Xannotation-default-target=param-property")
         }
     }
+}
+
+room3 {
+    schemaDirectory("$projectDir/schemas")
 }
 
 dependencies {

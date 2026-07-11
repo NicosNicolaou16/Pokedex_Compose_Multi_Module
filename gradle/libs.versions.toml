@@ -104,4 +104,5 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+androidx-room = { id = "androidx.room3", version.ref = "roomVersion" }
 
