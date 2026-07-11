@@ -9,13 +9,13 @@ plugins {
 
 android {
     namespace = "com.nicos.compose_ui"
-    buildToolsVersion = "36.0.0"
-    compileSdk = 36
+    buildToolsVersion = "37.0.0"
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 29
-        testOptions.targetSdk = 36
-        lint.targetSdk = 36
+        testOptions.targetSdk = 37
+        lint.targetSdk = 37
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
