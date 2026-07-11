@@ -49,7 +49,6 @@ dependencies {
     // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
     // Room Database
     api(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
