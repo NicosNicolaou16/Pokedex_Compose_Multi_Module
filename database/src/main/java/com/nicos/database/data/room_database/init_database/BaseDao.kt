@@ -1,6 +1,8 @@
 package com.nicos.database.data.room_database.init_database
 
-import androidx.room.*
+import androidx.room3.Insert
+import androidx.room3.OnConflictStrategy
+import androidx.room3.Update
 
 interface BaseDao<O, L> {
 
