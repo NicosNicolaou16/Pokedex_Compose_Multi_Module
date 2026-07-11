@@ -87,7 +87,7 @@ To add a new library module in Android Studio, follow these steps:
 
 ## ⚙️ Versioning
 
-- **Target SDK:** `36`
+- **Target SDK:** `37`
 - **Minimum SDK:** `29`
 - **Kotlin Version:** `2.3.21`
 - **Gradle Version:** `9.2.1`
