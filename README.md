@@ -79,6 +79,7 @@ This project follows a multi-module architecture to promote separation of concer
     - Responsible for all remote data operations, including API services (Retrofit), data transfer objects (DTOs), and network-related dependency injection.
 
 ## 🔧 How to Create an Android Library Module
+
 To add a new library module in Android Studio, follow these steps:
 1.  Go to `File` -> `New` -> `New Module...`
 2.  Select `Android Library` from the list.
