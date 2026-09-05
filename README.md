@@ -78,6 +78,14 @@ This project follows a multi-module architecture to promote separation of concer
 - **`:network` (Core Module)**
     - Responsible for all remote data operations, including API services (Retrofit), data transfer objects (DTOs), and network-related dependency injection.
 
+## 🏗️ Architecture
+
+The project follows **Clean Architecture** principles combined with **MVVM (Model-View-ViewModel)** and **Unidirectional Data Flow (UDF)**. This ensures a clean separation of concerns, making the codebase scalable, maintainable, and testable.
+
+### Project Structure
+
+
+
 ## 🔧 How to Create an Android Library Module
 
 To add a new library module in Android Studio, follow these steps:
