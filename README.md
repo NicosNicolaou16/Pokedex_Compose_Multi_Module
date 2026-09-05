@@ -84,7 +84,39 @@ The project follows **Clean Architecture** principles combined with **MVVM (Mode
 
 ### Project Structure
 
-
+├── app/                    # Main application module
+│   └── ...                 # Application setup and entry point
+│
+├── compose_ui/             # Presentation / Compose UI module
+│   ├── pokemon_list/       # Pokémon list feature
+│   │   ├── Screen
+│   │   ├── ViewModel
+│   │   └── UI State
+│   └── pokemon_details/    # Pokémon details feature
+│       ├── Screen
+│       ├── ViewModel
+│       └── UI State
+│
+├── core/                   # Core / Domain module
+│   ├── models/             # Domain models
+│   └── repositories/       # Repository interfaces / contracts
+│
+├── database/               # Local data module
+│   ├── entities/           # Room entities
+│   ├── dao/                # Room DAOs
+│   ├── mappers/            # Database ↔ Domain mapping
+│   └── repository/         # Local repository implementations
+│
+├── navigation/             # Navigation module
+│   ├── destinations/       # Type-safe navigation destinations
+│   ├── navigator/          # Navigation handling
+│   └── transitions/        # Shared element transitions
+│
+└── network/                # Remote data module
+├── api/                # Retrofit API services
+├── dto/                # Network DTOs
+├── mappers/            # DTO → Domain mapping
+└── di/                 # Network / Retrofit dependency injection
 
 ## 🔧 How to Create an Android Library Module
 
