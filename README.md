@@ -85,7 +85,6 @@ The project follows **Clean Architecture** principles combined with **MVVM (Mode
 ### Project Structure
 
 ```
-
 Pokedex_Compose_Multi_Module/
 │
 ├── app/                                          # Main application module
@@ -145,7 +144,6 @@ Pokedex_Compose_Multi_Module/
     ├── di/                                       # network_module/NetworkModules.kt,
     │                                             #   handing_error_module/HandlingErrorModule.kt
     └── generic_classes/                          # HandlingError.kt
-
 ```
 
 ## 🔧 How to Create an Android Library Module
