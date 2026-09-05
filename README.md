@@ -78,7 +78,76 @@ This project follows a multi-module architecture to promote separation of concer
 - **`:network` (Core Module)**
     - Responsible for all remote data operations, including API services (Retrofit), data transfer objects (DTOs), and network-related dependency injection.
 
+## 🏗️ Architecture
+
+The project follows **Clean Architecture** principles combined with **MVVM (Model-View-ViewModel)** and **Unidirectional Data Flow (UDF)**. This ensures a clean separation of concerns, making the codebase scalable, maintainable, and testable.
+
+### Project Structure
+
+```
+Pokedex_Compose_Multi_Module/
+│
+├── app/                                          # Main application module
+│   └── com/nicos/pokedex_compose_multi_module/
+│       ├── MainActivity.kt                       # Entry point / host activity
+│       ├── PokemonApplication.kt                 # Application class (Hilt)
+│       └── ui/theme/                             # Color.kt, Theme.kt, Type.kt
+│
+├── compose_ui/                                   # Presentation / Compose UI module
+│   ├── components/                               # GenericViews.kt, Toolbar.kt (shared UI)
+│   ├── pokemon_list_screen/                      # Pokémon list feature
+│   │   ├── PokemonListScreen.kt                  # Screen
+│   │   ├── PokemonListViewModel.kt               # ViewModel
+│   │   └── PokemonListState.kt                   # UI State
+│   ├── pokemon_details_screen/                   # Pokémon details feature
+│   │   ├── PokemonDetailsScreen.kt               # Screen
+│   │   ├── PokemonDetailsViewModel.kt            # ViewModel
+│   │   └── PokemonDetailsState.kt                # UI State
+│   └── utils/                                    # Color.kt, extensions/extensions.kt
+│
+├── core/                                         # Core / Domain module
+│   ├── data/                                     # UI/domain models
+│   │   ├── PokemonUi.kt
+│   │   ├── PokemonDetailsUI.kt
+│   │   ├── StatsUi.kt
+│   │   └── pokemon_details_data_model/           # PokemonDetailsDataModel.kt
+│   ├── domain/repositories/                      # Repository contracts
+│   │   ├── PokemonListRepository.kt
+│   │   └── PokemonDetailsRepository.kt
+│   └── utilities/                                # Resource.kt (Resource wrapper)
+│
+├── database/                                     # Local data module (Room)
+│   ├── data/
+│   │   ├── room_database/
+│   │   │   ├── entities/                         # PokemonEntity, PokemonDetailsEntity,
+│   │   │   │   │                                 #   PokemonDetailsWithStatsEntity, StatsEntity
+│   │   │   │   └── dao/                          # PokemonDao, PokemonDetailsDao, StatsDao
+│   │   │   ├── init_database/                    # BaseDao.kt, MyRoomDatabase.kt
+│   │   │   └── type_converters/                  # TypeConverter.kt
+│   │   ├── mappers/                              # PokemonDetailsMapper, StatsMapper, PokemonsUi
+│   │   ├── repository_impl/                      # PokemonListRepositoryImpl, PokemonDetailsRepositoryImpl
+│   │   └── repository_module/                    # RepositoriesModule.kt (Hilt bindings)
+│   └── di/                                        # MyRoomDatabaseModule.kt (Room DI)
+│
+├── navigation/                                   # Navigation module
+│   └── navigation/
+│       ├── Navigation.kt
+│       ├── navigation_3/                         # NavCompose.kt, NavigationState.kt, Navigator.kt
+│       └── screen_routes/                        # Screens.kt (type-safe destinations)
+│
+└── network/                                      # Remote data module (Retrofit)
+    ├── data/
+    │   ├── dto/                                  # PokemonDto, PokemonDetailsDto, StatDto, StatsDto
+    │   ├── pokemon_response_model/               # PokemonResponse.kt
+    │   ├── remote/                               # PokemonService.kt, init_network/MyNetworkManager.kt
+    │   └── services/                             # PokemonModule.kt
+    ├── di/                                       # network_module/NetworkModules.kt,
+    │                                             #   handing_error_module/HandlingErrorModule.kt
+    └── generic_classes/                          # HandlingError.kt
+```
+
 ## 🔧 How to Create an Android Library Module
+
 To add a new library module in Android Studio, follow these steps:
 1.  Go to `File` -> `New` -> `New Module...`
 2.  Select `Android Library` from the list.
@@ -89,8 +158,8 @@ To add a new library module in Android Studio, follow these steps:
 
 - **Target SDK:** `37`
 - **Minimum SDK:** `29`
-- **Kotlin Version:** `2.4.0`
-- **Gradle Version:** `9.2.1`
+- **Kotlin Version:** `2.4.10`
+- **Gradle Version:** `9.4.0`
 
 ## 📚 APIs & References
 
