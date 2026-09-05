@@ -84,6 +84,8 @@ The project follows **Clean Architecture** principles combined with **MVVM (Mode
 
 ### Project Structure
 
+```
+
 ├── app/                    # Main application module
 │   └── ...                 # Application setup and entry point
 │
@@ -117,6 +119,8 @@ The project follows **Clean Architecture** principles combined with **MVVM (Mode
 ├── dto/                # Network DTOs
 ├── mappers/            # DTO → Domain mapping
 └── di/                 # Network / Retrofit dependency injection
+
+```
 
 ## 🔧 How to Create an Android Library Module
 
