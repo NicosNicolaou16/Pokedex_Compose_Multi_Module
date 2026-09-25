@@ -154,6 +154,31 @@ To add a new library module in Android Studio, follow these steps:
 3.  Provide a name for your module (e.g., `feature_new`).
 4.  Click `Finish`.
 
+## ⚡ Performance Optimization
+
+To ensure the best user experience and smooth animations in a spatial environment, Pokedex Compose XR uses **Baseline Profiles**. These profiles provide a list of classes and methods that are pre-compiled on the device, reducing startup time and improving frame rates by minimizing Just-In-Time (JIT) compilation during critical user journeys.
+
+### Key Optimized Journeys:
+*   **App Startup**: Faster initial launch.
+*   **List Navigation**: Smooth scrolling through the Pokémon collection.
+*   **Image Loading**: Optimized Coil image loading during list interactions.
+*   **Screen Transitions**: Seamless navigation between the list and detail screens.
+
+### Generating Baseline Profiles:
+You can generate a new Baseline Profile by running the following Gradle command:
+```bash
+./gradlew :app:generateReleaseBaselineProfile
+```
+The generated profile will be automatically picked up during the release build process to optimize the final APK.
+
+### Measuring Startup Performance:
+To verify how effective the Baseline Profile is, run the Startup Benchmarks. They compare cold startup time **without** compilation (`CompilationMode.None`) against startup **with** the Baseline Profile applied (`CompilationMode.Partial`):
+```bash
+./gradlew :baselineProfile:connectedBenchmarkReleaseAndroidTest
+```
+Run this on a **physical device** (not an emulator) for accurate results. Baseline Profile generation and benchmarking require **API 33+**, or a rooted (AOSP) device/emulator on API 28+.
+
+
 ## ⚙️ Versioning
 
 - **Target SDK:** `37`
