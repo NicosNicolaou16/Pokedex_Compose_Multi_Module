@@ -55,6 +55,8 @@ This project is built with **[Kotlin](https://kotlinlang.org/docs/getting-starte
 - **Dependency Injection:** [Hilt](https://dagger.dev/hilt/)
 - **Build & Optimization:** [KSP](https://developer.android.com/build/migrate-to-ksp), [R8](https://developer.android.com/build/shrink-code)
 - **Custom Components:** [PercentageWithAnimation](https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose) for displaying Pokémon stats built by [@NicosNicolaou16](https://github.com/NicosNicolaou16).
+- **[Baseline Profiles](https://developer.android.com/topic/performance/baselineprofiles)**: Improves app performance by pre-compiling critical code paths.
+- **[Startup Benchmarks](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview)**: Measures cold app startup time to verify Baseline Profile effectiveness.
 
 ## 📦 Modules Overview
 
