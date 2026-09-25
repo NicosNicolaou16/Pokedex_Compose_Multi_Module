@@ -31,6 +31,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onPlaced
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -95,7 +96,7 @@ fun SharedTransitionScope.GridViewPokemonList(
                 }
             }) {
         LazyVerticalGrid(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().testTag("pokemon_grid"),
             columns = GridCells.Fixed(columns)
         ) {
             items(state.pokemonMutableList ?: mutableListOf(), key = { pokemon ->
