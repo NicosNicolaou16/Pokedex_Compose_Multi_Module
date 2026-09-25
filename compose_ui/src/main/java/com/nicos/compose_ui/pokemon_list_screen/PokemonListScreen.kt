@@ -96,7 +96,9 @@ fun SharedTransitionScope.GridViewPokemonList(
                 }
             }) {
         LazyVerticalGrid(
-            modifier = Modifier.fillMaxSize().testTag("pokemon_grid"),
+            modifier = Modifier
+                .fillMaxSize()
+                .testTag("pokemon_grid"),
             columns = GridCells.Fixed(columns)
         ) {
             items(state.pokemonMutableList ?: mutableListOf(), key = { pokemon ->
