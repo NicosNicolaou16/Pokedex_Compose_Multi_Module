@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.compose.compiler)
+    // Baseline Profile
+    alias(libs.plugins.baselineprofile)
 }
 
 android {

@@ -115,5 +115,5 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 androidx-room = { id = "androidx.room3", version.ref = "roomVersion" }
 # Baseline Profile
 android-test = { id = "com.android.test", version.ref = "agp" }
-androidx-baselineprofile = { id = "androidx.baselineprofile", version.ref = "benchmarkVersion" }
+baselineprofile = { id = "androidx.baselineprofile", version.ref = "benchmarkVersion" }
 
