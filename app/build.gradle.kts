@@ -99,7 +99,7 @@ dependencies {
     ksp(libs.kotlin.metadata.jvm)
     // Baseline Profile
     implementation(libs.androidx.profileinstaller)
-    //"baselineProfile"(project(":baselineprofile"))
+    "baselineProfile"(project(":baselineprofile"))
     // Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
