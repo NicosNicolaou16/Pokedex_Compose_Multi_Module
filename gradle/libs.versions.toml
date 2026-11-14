@@ -33,7 +33,7 @@ material3AdaptiveNav3 = "1.3.0"
 # Baseline Profile
 benchmarkVersion = "1.5.0"
 profileInstallerVersion = "1.4.1"
-uiautomatorVersion = "2.4.0"
+uiautomatorVersion = "2.4.1"
 
 [libraries]
 # My Library - https://github.com/NicosNicolaou16/PercentagesWithAnimationCompose
