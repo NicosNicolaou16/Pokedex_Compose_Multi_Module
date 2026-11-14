@@ -64,8 +64,6 @@ retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = 
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
 # OkHttp
 okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttpVersion" }
-# Gson
-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion" }
 # Coil
 coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion" }
 # Coroutine
