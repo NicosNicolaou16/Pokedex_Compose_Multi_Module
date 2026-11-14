@@ -1,9 +1,9 @@
 package com.nicos.network.data.dto
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
 
 data class PokemonDetailsDto(
     val name: String,
-    @SerializedName("stats") var statsEntity: MutableList<StatsDto>?,
+    @SerialName("stats") var statsEntity: MutableList<StatsDto>?,
     val weight: Int?
 )
