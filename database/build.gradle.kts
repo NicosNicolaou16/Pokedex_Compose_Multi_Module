@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.androidx.room)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -51,12 +50,15 @@ dependencies {
 
     // Modules
     implementation(projects.network)
+    implementation(projects.core)
     // Architecture
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     // Room Database
     api(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
     // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
