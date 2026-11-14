@@ -57,8 +57,8 @@ dependencies {
     // Room Database
     api(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
-    // Gson
-    implementation(libs.gson)
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
     // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)

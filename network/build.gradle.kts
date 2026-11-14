@@ -4,17 +4,18 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "com.nicos.network"
-    buildToolsVersion = "36.0.0"
-    compileSdk = 36
+    buildToolsVersion = "37.0.0"
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 29
-        testOptions.targetSdk = 36
-        lint.targetSdk = 36
+        testOptions.targetSdk = 37
+        lint.targetSdk = 37
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -50,11 +51,11 @@ dependencies {
     implementation(libs.androidx.appcompat)
     // Retrofit
     implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
+    implementation(libs.retrofit.kotlinx.serialization)
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
     // OkHttp
     implementation(libs.okHttp)
-    // Gson
-    implementation(libs.gson)
     // Coroutines
     implementation(libs.coroutine.core)
     implementation(libs.coroutine.android)
