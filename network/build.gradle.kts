@@ -51,7 +51,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     // Retrofit
     implementation(libs.retrofit)
-    implementation(libs.kotlinx.serialization.core)
+    implementation(libs.retrofit.kotlinx.serialization)
     // Kotlin Serialization
     implementation(libs.kotlinx.serialization.json)
     // OkHttp
