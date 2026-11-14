@@ -52,6 +52,8 @@ dependencies {
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.core)
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
     // OkHttp
     implementation(libs.okHttp)
     // Coroutines
