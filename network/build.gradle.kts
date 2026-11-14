@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     // Retrofit
     implementation(libs.retrofit)
-    implementation(libs.retrofit.gson)
+    implementation(libs.kotlinx.serialization.core)
     // OkHttp
     implementation(libs.okHttp)
     // Coroutines
